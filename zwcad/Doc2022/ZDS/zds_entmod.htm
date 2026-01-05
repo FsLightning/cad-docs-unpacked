@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>zds_entmod</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<script language="javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2022 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">zds_entmod</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+<p class="cmd_line"><font color="#186DAD"><b>int zds_entmod (const struct zds_resbuf *entity-list);</b></font></p>
+<p class="body_text">Modify an object in this drawing.</p>
+<hr algin="left" />
+<p class="body_text">This function modifies the information for an object already existing in the drawing database. You may have made changes to the object list that you retrieved using 
+<a href="zds_entget.htm">zds_entget</a>, so the function zds_entmod writes the changed list permanently into the database.</p>
+<p class="body_text">This function updates the display of the modified object, unless it is a sub-entity (such as part of a block or polyline). For a sub-entity, use the 
+<a href="zds_entupd.htm">zds_entupd</a> function or Regen command to force a redisplay the object on the screen.</p>
+<p class="body_text">The argument entity-list represents a linked list of result buffers in the same form as that returned by
+<a href="zds_entget.htm">zds_entget</a>. Note that zds_entmod cannot change the object's type or handle.</p>
+<p class="body_text">Text style names, linetype names, shape names, and block names must be already defined in the drawing before your pass the entity list to zds_entmod; layer names are the exception. The list must not include the name of a handle.</p>
+<p class="body_text">This function returns RTNORM or RTREJ, with the reason code in system variable ERRNO.</p>
+<hr algin="left" />
+<p class="define_head_1">NOTES</p>
+<ul class="command_ul">
+	<li>
+	<p class="define_text" style="margin-left: 0pt">To restore the default color or linetype to an object, set the color to 256 and the linetype to BYLAYER.</p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt">The following objects cannot be modified: viewports, xrefs, xdefs, and xdeps.</p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt">The following symbol table entries cannot be modified and/or renamed:</p>
+	</li>
+</ul>
+<table class="table-desc">
+	<tr>
+		<td>Table Name</td>
+		<td>Entry</td>
+	</tr>
+	<tr>
+		<td>LAYER</td>
+		<td>All, except extended entity data.</td>
+	</tr>
+	<tr>
+		<td>LINESTYLE</td>
+		<td>CONTINUOUS</td>
+	</tr>
+	<tr>
+		<td>VPORT</td>
+		<td>*ACTIVE</td>
+	</tr>
+</table>
+<p class="define_text_1">These can be modified but not renamed:</p>
+<table class="table-desc">
+	<tr>
+		<td>Table Name</td>
+		<td>Entry</td>
+	</tr>
+	<tr>
+		<td>APPID</td>
+		<td>None.</td>
+	</tr>
+	<tr>
+		<td>BLOCKS</td>
+		<td>*MODEL_SPACE and *PAPER_SPACE</td>
+	</tr>
+	<tr>
+		<td>DIMSTYLE</td>
+		<td>STANDARD</td>
+	</tr>
+	<tr>
+		<td>LAYER</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>STYLE</td>
+		<td>STANDARD</td>
+	</tr>
+</table>
+<hr algin="left" />
+<p class="define_head_1">Example</p>
+<p class="define_text_1">zds_name entname;</p>
+<p class="define_text_1">struct zds_resbuf *entlist;</p>
+<p class="define_text_1">struct zds_resbuf *templist;</p>
+<p class="define_text_1">zds_entlast(entname); //Get the name of the last object drawn.</p>
+<p class="define_text_1">entlist=zds_entget(entname); //Get the resbuf for that object.</p>
+<p class="define_text_1">//Go through the object's resbuf...</p>
+<p class="define_text_1">for (templist=entlist;templist->rbnext!=NULL;templist=templist->rbnext)</p>
+<p class="define_text_1">&nbsp;{</p>
+<p class="define_text_1">&nbsp;&nbsp;
+if (templist->restype==62) //When it gets to the color</p>
+<p class="define_text_1">&nbsp;&nbsp; templist->resval.rint=240; //group, change it to 240.</p>
+<p class="define_text_1">&nbsp;}</p>
+<p class="define_text_1"><b>zds_entmod</b>(entlist); //Put the (modified) resbuf back</p>
+
+<hr algin="left" />
+<p class="define_head_1">Tell me about...</p>
+<ul class="command_ul">
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="Programming%20Overview%20of%20ZDS.htm">Programming Overview of ZDS (ZWCAD Development System)</a></p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_entmake.htm">zds_entmake</a></p></li>
+</ul>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2022 广州中望龙腾软件股份有限公司 All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

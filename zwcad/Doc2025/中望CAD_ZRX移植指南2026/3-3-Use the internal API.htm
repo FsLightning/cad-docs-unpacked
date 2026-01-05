@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>内部接口使用</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+
+
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">中望CAD 2026 ZRX移植指南</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">内部接口使用</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+
+<p class="dev_body_text">和其他CAD平台一样，中望CAD导出了一些内部使用的接口，开发者可以通过技术手段使用这些内部接口，中望CAD对常用的内部接口进行了兼容性处理，通常仅需包含udocapi.h即可使用其中的内部函数(如下)。</p>
+<pre class="code_sample">#include "udocapi.h"
+void test()
+{
+	extern Adesk::Boolean acedPostCommand(const ACHAR * cmd);
+	Adesk::Boolean retValue = acedPostCommand(_T("about\n"));
+}
+</pre>
+<hr algin="left" >
+<p class="define_head_1">ARX中的内部接口</p>
+<p class="define_text_1">常用ARX内部函数原型对比(ObjectARX2024和ZRX2026)</p>
+<table class="table-desc">
+<TR>
+<TH class="dev_body_text">ARX函数名</TH>
+<TH>ARX函数原型</TH>
+<TH>ARX库文件</TH>
+<TH>ZRX函数原型</TH>
+<TH>ZRX库文件</TH>
+</TR>
+<TR>
+<td class="table-item-odd">acedPostCommand</td>
+<td class="table-item-odd">Adesk::Boolean acedPostCommand(const ACHAR* cmd);</td>
+<td class="table-item-odd">accore.lib</td>
+<td class="table-item-odd">ZSoft::Boolean zcedPostCommand(const ZTCHAR* cmd);</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+</TR>
+<TR>
+<td class="table-item-odd">acedGetCurrentView</td>
+<td class="table-item-odd">Acad::ErrorStatus acedGetCurrentView(AcDbViewTableRecord& acVTRecord);</td>
+<td class="table-item-odd">accore.lib</td>
+<td class="table-item-odd">Zcad::ErrorStatus zcedGetCurrentView(ZcDbViewTableRecord& zcVTRecord);</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+</TR>
+<TR>
+<td class="table-item-odd">acedLineWeightDialog</td>
+<td class="table-item-odd">bool acedLineWeightDialog(AcDb::LineWeight curlweight, bool bIncludeByLyerByBlk, AcDb::LineWeight& selectedlweight);</td>
+<td class="table-item-odd">acad.lib</td>
+<td class="table-item-odd">bool zcedLineWeightDialog(ZcDb::LineWeight curlweight, bool bIncludeByLyerByBlk, ZcDb::LineWeight& selectedlweight);</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+</TR>
+<TR>
+<td class="table-item-odd">acedLineWeightDialog</td>
+<td class="table-item-odd"><del>bool acedLineWeightDialog(AcDb::LineWeight curlweight, bool bIncludeByLyerByBlk, AcDb::LineWeight& selectedlweight, AcDbDatabase* pDb, HWND hParentWindow);</del></td>
+<td class="table-item-odd">acad.lib</td>
+<td class="table-item-odd">bool zcedLineWeightDialog(ZcDb::LineWeight curlweight, bool bIncludeByLyerByBlk, ZcDb::LineWeight& selectedlweight, ZcDbDatabase* pDb, HWND hParentWindow);</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+</TR>
+<TR>
+<td class="table-item-odd">acedPlotStyleDialog</td>
+<td class="table-item-odd">bool acedPlotStyleDialog(BOOL bIsSelectPlotStyle, BOOL bByLayerBlock, ACHAR*& szPlotStyle);</td>
+<td class="table-item-odd">acad.lib</td>
+<td class="table-item-odd">bool zcedPlotStyleDialog(BOOL bIsSelectPlotStyle, BOOL bByLayerBlock, ZTCHAR*& szPlotStyle);</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+</TR>
+<TR>
+<td class="table-item-odd">acedGetPredefinedPattens</td>
+<td class="table-item-odd">bool acedGetPredefinedPattens(AcStringArray& arrPredefinedPattern);</td>
+<td class="table-item-odd">acad.lib</td>
+<td class="table-item-odd">bool zcedGetPredefinedPattens(ZcStringArray& arrPredefinedPattern);</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+</TR>
+<TR>
+<td class="table-item-odd">acedGetRecentRedoHistory</td>
+<td class="table-item-odd">extern "C" int acedGetRecentRedoHistory(AcStringArray&);</td>
+<td class="table-item-odd">accore.lib</td>
+<td class="table-item-odd">extern "C" int zcedGetRecentRedoHistory(ZcStringArray&);</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+</TR>
+<TR>
+<td class="table-item-odd">acedGetRecentUndoHistory</td>
+<td class="table-item-odd">extern "C" int acedGetRecentUndoHistory(AcStringArray&);</td>
+<td class="table-item-odd">accore.lib</td>
+<td class="table-item-odd">extern "C" int zcedGetRecentUndoHistory(ZcStringArray&);</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+</TR>
+<TR>
+<td class="table-item-odd">acedHatchPalletteDialog</td>
+<td class="table-item-odd">bool acedHatchPalletteDialog(const ACHAR* pszCurrentPattern, bool bIsShowCustomPattern, ACHAR*& prefchNewSelectedPattern);</td>
+<td class="table-item-odd">acad.lib</td>
+<td class="table-item-odd">bool zcedHatchPalletteDialog(const ZTCHAR* pszCurrentPattern, bool bIsShowCustomPattern, ZTCHAR*& prefchNewSelectedPattern);</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+</TR>
+<TR>
+<td class="table-item-odd">acedNEntSelPEx</td>
+<td class="table-item-odd">int acedNEntSelPEx(const ACHAR* str, ads_name entres, ads_point ptres, int pickflag, ads_matrix xformres, struct resbuf** refstkres, unsigned int uTransSpaceFlag, Adesk::GsMarker* gsmarker);</td>
+<td class="table-item-odd">accore.lib</td>
+<td class="table-item-odd">int zcedNEntSelPEx(const ZTCHAR* str, zds_name entres, zds_point ptres, int pickflag, zds_matrix xformres, struct resbuf** refstkres, unsigned int uTransSpaceFlag, ZSoft::GsMarker* gsmarker);</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+</TR>
+<TR>
+<td class="table-item-odd">acedRegenLayers</td>
+<td class="table-item-odd">void acedRegenLayers(const AcDbObjectIdArray& layerIds, int nParam1, int nParam2);</td>
+<td class="table-item-odd">accore.lib</td>
+<td class="table-item-odd">void zcedRegenLayers(const ZcDbObjectIdArray& layerIds, int nParam1, int nParam2);</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+</TR>
+<TR>
+<td class="table-item-odd">acgsSetLineWeightDisplay</td>
+<td class="table-item-odd">void acgsSetLineWeightDisplay(AcGsDevice* gsDevice, bool val);</td>
+<td class="table-item-odd">accore.lib</td>
+<td class="table-item-odd">void zcgsSetLineWeightDisplay(ZcGsDevice* gsDevice, bool val);</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+</TR>
+<TR>
+<td class="table-item-odd">OPMxemark</td>
+<td class="table-item-odd">void OPMxemark(LONG_PTR** pseg);</td>
+<td class="table-item-odd">accore.lib</td>
+<td class="table-item-odd">void ZwOPMxemark(LONG_PTR** pseg);</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+</TR>
+<TR>
+<td class="table-item-odd">OPMxmark</td>
+<td class="table-item-odd">void OPMxmark(double x, double y, double z, LONG_PTR** pseg);</td>
+<td class="table-item-odd">accore.lib</td>
+<td class="table-item-odd">void ZwOPMxmark(double x, double y, double z, LONG_PTR** pseg);</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+</TR>
+<TR>
+<td class="table-item-odd">ExtensionLoader_IsLoaded</td>
+<td class="table-item-odd">bool ExtensionLoader_IsLoaded(const ACHAR * fname);</td>
+<td class="table-item-odd">acdbmgd.lib</td>
+<td class="table-item-odd">bool ExtensionLoader_IsLoaded(const ACHAR * fname);</td>
+<td class="table-item-odd">ZwManaged.lib</td>
+</TR>
+<TR>
+<td class="table-item-odd">LoadManagedDll</td>
+<td class="table-item-odd">Acad::ErrorStatus LoadManagedDll(const ACHAR * fname);</td>
+<td class="table-item-odd">acdbmgd.lib</td>
+<td class="table-item-odd">Zcad::ErrorStatus LoadManagedDll(const ZTCHAR * fname);</td>
+<td class="table-item-odd">ZwManaged.lib</td>
+</TR>
+<TR>
+<td class="table-item-odd">purgeDatabase</td>
+<td class="table-item-odd">Acad::ErrorStatus purgeDatabase(AcDbDatabase* pDb);</td>
+<td class="table-item-odd">accore.lib</td>
+<td class="table-item-odd">Zcad::ErrorStatus purgeDatabase(ZcDbDatabase* pDb);</td>
+<td class="table-item-odd">ZwDatabase.lib</td>
+</TR>
+</TABLE>
+
+<hr algin="left" >
+<p class="define_head_1">ZRX中特有的内部接口</p>
+<p class="define_text_1">常用ZRX内部函数及其说明</p>
+<table class="table-desc">
+<TR>
+<TH class="dev_body_text">ZRX函数名</TH>
+<TH>ZRX函数原型</TH>
+<TH>ZRX库文件</TH>
+<TH>ZRX函数说明</TH>
+</TR>
+<TR>
+<td class="table-item-odd">zcmdRecordCRAddCallBack</td>
+<td class="table-item-odd">void zcmdRecordCRAddCallBack(void (*cbfunc)(const ZTCHAR*));</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+<td class="table-item-odd">添加CR回调(回调函数参数为生成dmp后的文件路径)</td>
+</TR>
+<TR>
+<td class="table-item-odd">zcmdRecordCRRemoveCallBack</td>
+<td class="table-item-odd">void zcmdRecordCRRemoveCallBack(void (*cbfunc)(const ZTCHAR*));</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+<td class="table-item-odd">移除CR回调(回调函数参数为生成dmp后的文件路径)</td>
+</TR>
+<TR>
+<td class="table-item-odd">zwGetMainFrameCaptionTitle</td>
+<td class="table-item-odd">ZTCHAR* zwGetMainFrameCaptionTitle();</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+<td class="table-item-odd">获取主框架标题文本</td>
+</TR>
+<TR>
+<td class="table-item-odd">zwSetMainFrameCaptionTitle</td>
+<td class="table-item-odd">void zwSetMainFrameCaptionTitle(ZTCHAR const* pszCaptionTitle);</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+<td class="table-item-odd">设置主框架标题文本</td>
+</TR>
+<TR>
+<td class="table-item-odd">GetViewImage</td>
+<td class="table-item-odd">HBITMAP GetViewImage(ZcGsView* pView, int width, int height);</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+<td class="table-item-odd">获取视图图像</td>
+</TR>
+<td class="table-item-odd">zwExportLayout</td>
+<td class="table-item-odd">ZcString zwExportLayout(ZcDbDatabase*& pDb, bool bUsedForDotNet, ZTCHAR* DeFaultPath);</td>
+<td class="table-item-odd">ZWCAD.lib</td>
+<td class="table-item-odd">布局导模型</td>
+</TR>
+</TABLE>
+
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2025 ZWSOFT CO., LTD.(Guangzhou). All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

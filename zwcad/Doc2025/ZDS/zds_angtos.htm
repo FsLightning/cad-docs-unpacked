@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>zds_angtos</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<script language="javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2024 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">zds_angtos</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+<p class="cmd_line"><font color="#186DAD"><b>int zds_angtos (double rangle, int format, int places, char *sangle);</b></font></p>
+<p class="body_text">Convert this absolute angle to a string, relative to angbase.</p>
+<hr algin="left" />
+<p class="body_text">This function converts the angle rangle in radians to a string, known as *sangle. This is similar to the 
+<a href="zds_rtos.htm">zds_rtos</a> function, but zds_angtos converts angles (rather than numbers) to strings.</p>
+<p class="body_text">The format argument represents the type of string to which zds_angtos will convert the given number. The following formats are available:</p>
+<table class="table-desc">
+	<tr>
+		<th>Format Code</th>
+		<th>Meaning</th>
+		<th>Example</th>
+	</tr>
+	<tr>
+		<td>0</td>
+		<td>Degrees</td>
+		<td>360d</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>Deg/Min/Sec</td>
+		<td>47d29'15"</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>Grads</td>
+		<td>132g</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>Radians</td>
+		<td>6.28r</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>Surveyor's Units</td>
+		<td>N 82d W</td>
+	</tr>
+</table>
+<p class="body_text">The argument places represents the number of decimal places to which the angle in the string is displayed. To default to the current level of precision (as defined by system variable LUPREC), use -1.</p>
+<p class="body_text">The argument *sangle represents the given angle, converted to a string, according to format and number of decimal places.</p>
+<p class="body_text">This function returns RTNORM or an error code.</p>
+<hr algin="left" />
+<p class="define_head_1">Example</p>
+<p class="define_text_1">int format=0;</p>
+<p class="define_text_1">zds_real real1;</p>
+<p class="define_text_1">char string1[512];</p>
+<p class="define_text_1">zds_getreal("\nEnter radians to be converted to degrees: ",&real1);</p>
+<p class="define_text_1"><b>zds_angtos</b>(real1,format,-1,string1);</p>
+<p class="define_text_1">zds_printf("\n%f radians equals %s degrees. ",real1,string1);</p>
+<p class="define_text_1">Prints:</p>
+<p class="define_text_1">Enter radians to be converted to degrees: 1.570796</p>
+<p class="define_text_1">1.570796 radians equals 90 degrees.</p>
+<hr algin="left" />
+<p class="define_head_1">Tell me about...</p>
+<ul class="command_ul">
+	<li>
+	<p class="define_text" style="margin-left: 0pt">
+	<a href="Programming%20Overview%20of%20ZDS.htm">Programming Overview of ZDS (ZWCAD Development System)</a></p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_angle.htm">zds_angle</a></p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_angtof.htm">zds_angtof</a></p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_getangle.htm">zds_getangle</a></p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_rtos.htm">zds_rtos</a></p>
+	</li>
+</ul>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2023 ZWSOFT CO., LTD.(Guangzhou). All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

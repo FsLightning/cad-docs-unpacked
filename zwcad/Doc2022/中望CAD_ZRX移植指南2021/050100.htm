@@ -1,0 +1,142 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE></TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css href="../styles/style.css"><LINK rel=StyleSheet 
+type=text/css href="../styles/zwcadcss.css">
+<META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD>
+<BODY>
+<DIV id=main class=main>
+<DIV id=header class=header>
+<DIV class=header_resize>
+<DIV class=banner>
+<DIV class=banner_img_right><IMG src="../images/banner_img_right.png"></DIV>
+<DIV class=hear_text>ZWCAD 2021 Help</DIV></DIV></DIV></DIV>
+<DIV class=clr></DIV>
+<DIV class=Tophead><SPAN 
+class=Tophead_text>从VS2010(VC10)升级到VS2017(VC15)</SPAN></DIV>
+<DIV class=clr></DIV>
+<DIV id=content class=content>
+<DIV class=content_resize>
+<DIV class=article>
+<DIV class=clr></DIV>
+<DIV>
+<P 
+style="TEXT-ALIGN: justify; ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; TEXT-INDENT: -18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; FONT-STYLE: normal">a)</SPAN><SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: normal">初始化之前无法使用</SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; TEXT-INDENT: 24pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri">1&gt;d:\8.work\1.code\zwcada_branchs\archzw\swr_archcore\exportfile.cpp(1700): 
+error C3861: “ptr_fun”: The identifier could not be found.</SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; TEXT-INDENT: 24pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri">1&gt;d:\8.work\1.code\zwcada_branchs\archzw\swr_archcore\exportfile.cpp(1700): 
+error C3861: “bind1st”: The identifier could not be found.</SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; TEXT-INDENT: 24pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri">1&gt;d:\8.work\1.code\zwcada_branchs\archzw\swr_archcore\exportfile.cpp(1701): 
+error C3536: “itFloor”: Cannot be used before initialization.</SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri">请在代码中添加头文件&lt;functional&gt;</SPAN><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: 等线">。</SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt; TEXT-INDENT: -18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; FONT-STYLE: normal">b)</SPAN><SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp; <SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: normal">执行</SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: normal; COLOR: #ff0000">_tfindfirst(), 
+_findclose(), _tfindnext()</SPAN>返回错误<SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: normal">: 
+0xC0000005，然后程序崩溃。如下面的代码所示</SPAN><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: 等线; FONT-WEIGHT: normal">：</SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #0070c0; FONT-STYLE: italic">long 
+hand;</SPAN><SPAN 
+style="WIDTH: 12.71pt; DISPLAY: inline-block; TEXT-INDENT: 0pt"></SPAN> <SPAN 
+style="WIDTH: 21pt; DISPLAY: inline-block; TEXT-INDENT: 0pt"></SPAN><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #ff0000; FONT-STYLE: italic">//</SPAN><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #ff0000; FONT-STYLE: italic">hand的类型从</SPAN><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #ff0000; FONT-STYLE: italic">long改为long 
+long</SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #0070c0; FONT-STYLE: italic">hand 
+= _tfindfirst((TCHAR *)sDbfPath, &amp;fb);</SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #0070c0; FONT-STYLE: italic">if(hand 
+!= -1L)</SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #0070c0; FONT-STYLE: italic">{ 
+</SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt"><SPAN 
+style="WIDTH: 3pt; DISPLAY: inline-block; TEXT-INDENT: 0pt"></SPAN><SPAN 
+style="WIDTH: 21pt; DISPLAY: inline-block; TEXT-INDENT: 0pt"></SPAN><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #0070c0; FONT-STYLE: italic">bFind 
+= TRUE; </SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt; TEXT-INDENT: 24pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #0070c0; FONT-STYLE: italic">_findclose(hand); 
+</SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #0070c0; FONT-STYLE: italic">}</SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: 等线">您应该将</SPAN><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: 等线">hand的类型从long改为long long。</SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt; TEXT-INDENT: -18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; FONT-STYLE: normal">c)</SPAN>&nbsp;<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: normal"><SPAN 
+style='FONT-SIZE: 14px; FONT-FAMILY: "Microsoft YaHei", "Helvetica Neue", SimSun; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: 400; COLOR: rgb(50,62,50); FONT-STYLE: normal; TEXT-ALIGN: left; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(239,182,207); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>#error 
+MFC does not support _WIN32_WINNT less than _WIN32_WINNT_WINXP:</SPAN></SPAN> 
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #0070c0; FONT-STYLE: italic">#ifndef</SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #0070c0; FONT-STYLE: italic">_WIN32_WINNT</SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #0070c0; FONT-STYLE: italic">#define 
+_WIN32_WINNT 0x0500</SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #0070c0; FONT-STYLE: italic">#endif</SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri">您应该用以下方式屏蔽代码:</SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #0070c0; FONT-STYLE: italic">#if 
+_MSC_VER &lt; 1910</SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #0070c0; FONT-STYLE: italic">#ifndef 
+_WIN32_WINNT</SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #0070c0; FONT-STYLE: italic">#define 
+_WIN32_WINNT 0x0500</SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #0070c0; FONT-STYLE: italic">#endif</SPAN></P>
+<P 
+style="ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt 0pt 0pt 18pt; LINE-HEIGHT: 18pt"><SPAN 
+style="FONT-SIZE: 12pt; FONT-FAMILY: Calibri; FONT-WEIGHT: bold; COLOR: #0070c0; FONT-STYLE: italic">#endif</SPAN></P>
+<P style="TEXT-ALIGN: justify; ORPHANS: 0; WIDOWS: 0; MARGIN: 0pt"><SPAN 
+style="FONT-SIZE: 10.5pt; FONT-FAMILY: 等线"></SPAN>&nbsp;</P></DIV>
+<DIV class=cnzz style="DISPLAY: none"></DIV><!--main--></DIV></DIV></DIV>
+<DIV class=blank></DIV>
+<DIV class=footer_placeholder></DIV></DIV>
+<DIV id=fbg class=fbg>
+<DIV class=footer><SPAN class=lr>© 1998-2021 广州中望龙腾软件股份有限公司 All Rights 
+Reserved.</SPAN> 
+<DIV class=clr></DIV></DIV></DIV></BODY></HTML>

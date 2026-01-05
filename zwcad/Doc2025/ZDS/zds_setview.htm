@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>zds_setview</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<script language="javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2024 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">zds_setview</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+<p class="cmd_line"><font color="#186DAD"><b>int zds_setview (const struct zds_resbuf *views, int vport);</b></font></p>
+<p class="body_text">Set a 3-D viewpoint.</p>
+<hr algin="left" />
+<p class="body_text">This function changes the 3-D viewpoint of a specified viewport.</p>
+<p class="body_text">The views argument is pointer to a list of result buffers. It does not look like the simple x,y,z coordinates, such as '(1.0 2.0 3.0), that you might expect from the Viewpoint command. Instead, views requires the view descriptor table as returned by the 
+<a href="zds_tblsearch.htm">zds_tblsearch</a> function.</p>
+<p class="body_text">One way to create the viewpoint data is with the View Save command.</p>
+<p class="body_text">The vport argument is specifies the viewport number. When you have a single viewport, its value is 2. To use the current viewport, set vport to 0. To get the number of the current viewport, use the Cvport system variable.</p>
+<p class="body_text">This function returns RTNORM or RTERROR.</p>
+<hr algin="left" />
+<p class="define_head_1">Tell me about...</p>
+<ul class="command_ul">
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="Programming%20Overview%20of%20ZDS.htm">Programming Overview of ZDS (ZWCAD Development System)</a></p>
+	</li>
+</ul>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2023 ZWSOFT CO., LTD.(Guangzhou). All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

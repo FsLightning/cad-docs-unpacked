@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>zds_getangle</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<script language="javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2022 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">zds_getangle</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+<p class="cmd_line"><font color="#186DAD"><b>int zds_getangle (const zds_point firstpt, const char *prompt, double *answer);</b></font></p>
+<p class="body_text">Ask the user to specify an angle.</p>
+<hr algin="left" />
+<p class="body_text">This function pauses to get an angle from the user. You can prompt the user to specify an angle numerically, or by picking points.</p>
+<p class="body_text">The argument firstpt represents the first point of the angle. It may be null. When null, the user enters the angle itself, using the current units for angles.</p>
+<p class="body_text">If given a starting point (firstpt), the user picks another point to define a rubber-band line, and zds_getangle determines the counter-clockwise angle between the current zero direction (as set in ANGBASE) and the rubber-band line.</p>
+<p class="body_text">The prompt argument represents a command-line prompt requesting that the user specify or pick an angle. This argument may be null.</p>
+<p class="body_text">The answer argument represents the angle specified by the user, counter-clockwise from the zero direction, expressed in radians (regardless of the current units for angles).</p>
+<p class="body_text">This function returns one of the following: RTCAN, RTERROR, RTKWORD, RTNONE, or RTNORM.</p>
+<p class="body_text">Note This functions read ANGBASE to find the 0-angle direction. If you prefer the 0-angle fixed in the east or 3 o'clock direction, use the 
+<a href="zds_getorient.htm">zds_getorient</a> function.</p>
+<hr algin="left" />
+<p class="define_head_1">Example</p>
+<p class="define_text_1">zds_real *answer;</p>
+<p class="define_text_1">zds_point firstpt;</p>
+<p class="define_text_1">zds_getpoint(NULL,"\nFirst point: ",firstpt);</p>
+<p class="define_text_1"><b>zds_getangle</b>(point1,"\nSecond point: ",&answer);</p>
+<p class="define_text_1">zds_printf("\nThe angle is %f radians.",answer);
+</p>
+
+<hr algin="left" />
+<p class="define_head_1">Tell me about...</p>
+<ul class="command_ul">
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="Programming%20Overview%20of%20ZDS.htm">Programming Overview of ZDS (ZWCAD Development System)</a></p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_angle.htm">zds_angle</a></p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_getorient.htm">zds_getorient</a></p>
+	</li>
+</ul>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2022 广州中望龙腾软件股份有限公司 All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

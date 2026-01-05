@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>从中望2021(22/23/24)到中望2025</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+
+
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">中望CAD 2026 ZRX移植指南</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">从中望2021(22/23/24)到中望2026</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+
+<p class="dev_body_text">中望CAD2025版本进行了SDK升级改造，ZRX接口从之前的ObjectARX2019升级到了ObjectARX2024，中望CAD2026版本的接口中望CAD2025版本兼容。中望CAD2025版本SDK升级改造的一些主要修改见下文描述(为了便于用户查询，下文采用axxx的形式来名称描述接口，实际上的接口应为zxxx)。</p>
+<hr algin="left" >
+<p class="define_head_1">ZRXSDK2025移除的文件</p>
+<ul class="command_ul">
+<li>lib-Win32。中望CAD2025版本开始不再支持32位版本。</li>
+<li>AcFileDepMgr.h。声明了AcFileDependencyInfo和AcFileDependencyManager类，ObjectARX2018开始不再支持。</li>
+<li>acgsRender.h。声明了AcGsRenderProgressMonitor类，移动到了gs.h头文件中。</li> 
+<li>acuistring.h。声明了CAcUiString和CAcUiStringExp类，ObjectARX2019开始不再支持。</li> 
+<li>AdHostableUi.h。定义了ADHOSTABLE_PORT导出宏，从ObjectARX2024开始不再使用。</li> 
+<li>aseclass.h。声明了CAseXXX系列接口，ObjectARX2018开始不再提供，中望CAD中不支持。</li>
+<li>aseconst.h。声明了CAseXXX系列接口需要的枚举，ObjectARX2018开始不再提供，中望CAD中不支持。</li>
+<li>asiappl.h。声明了CAsiXXX系列接口，ObjectARX2018开始不再提供，中望CAD中不支持。</li>
+<li>asiclass.h。声明了CAsiXXX系列接口，ObjectARX2018开始不再提供，中望CAD中不支持。</li>
+<li>asiconst.h。声明了CAsiXXX系列接口，ObjectARX2018开始不再提供，中望CAD中不支持。</li>
+<li>asisdata.h。声明了CAsiXXX系列接口，ObjectARX2018开始不再提供，中望CAD中不支持。</li>
+<li>asisys.h。声明了CAsiXXX系列接口，ObjectARX2018开始不再提供，中望CAD中不支持。</li>
+<li>asiucode.h。声明了CAsiXXX系列接口，ObjectARX2018开始不再提供，中望CAD中不支持。</li>
+</ul>
+<hr algin="left" >
+<p class="define_head_1">ZRXSDK2025接口变更说明</p>
+<p class="define_head_2">发生改变的接口</p>
+<table class="table-desc">
+    <TR>
+    <TH class="dev_body_text">类</TH>
+    <TH class="dev_body_text">名称</TH>
+    <TH class="dev_body_text">之前的声明</TH>
+    <TH colspan="2">新的声明</TH>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">acedFindFile</td>
+    <td class="table-item-odd">int acedFindFile(const ACHAR *fname, ACHAR *result);</td>
+    <td class="table-item-odd">int acedFindFile(const ACHAR *fname, ACHAR *result, size_t nBufLen);</td>
+    <td class="table-item-odd">int acedFindFile(const ACHAR *fname, AcString &sResult);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">acedFindTrustedFile</td>
+    <td class="table-item-odd">int acedFindTrustedFile(const ACHAR *fname, ACHAR *result);</td>
+    <td class="table-item-odd">int acedFindTrustedFile(const ACHAR *fname, ACHAR *result, size_t nBufLen);</td>
+    <td class="table-item-odd">int acedFindTrustedFile(const ACHAR *fname, AcString &sResult);</td>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">acedGetEnv</td>
+    <td class="table-item-odd">int acedGetEnv(const ACHAR *sym, ACHAR *var);</td>
+    <td class="table-item-odd">int acedGetEnv(const ACHAR *sym, ACHAR *var, size_t nBufLen);</td>
+    <td class="table-item-odd">int acedGetEnv(const ACHAR *sym, ACHAR *sym, AcString &sResult);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">acedGetCfg</td>
+    <td class="table-item-odd">int acedGetCfg(const ACHAR *sym, ACHAR *var);</td>
+    <td class="table-item-odd" colspan="2">int acedGetCfg(const ACHAR *sym, ACHAR *var, size_t nBufLen);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">acedGetInput</td>
+    <td class="table-item-odd">int acedGetInput(ACHAR *str);</td>
+    <td class="table-item-odd">int acedGetInput(ACHAR *str, size_t nBufLen);</td>
+    <td class="table-item-odd">int acedGetInput(AcString &sOut);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">acedGetKword</td>
+    <td class="table-item-odd">int acedGetKword(const ACHAR *prompt, ACHAR *result);</td>
+    <td class="table-item-odd">int acedGetKword(const ACHAR *prompt, ACHAR *result, size_t nBufLen);</td>
+    <td class="table-item-odd">int acedGetKword(const ACHAR *prompt, AcString &sResult);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">acedGetString</td>
+    <td class="table-item-odd">int acedGetString(int cronly, const ACHAR *prompt, ACHAR *result);</td>
+    <td class="table-item-odd">int acedGetString(int cronly, const ACHAR *prompt, ACHAR *result, size_t bufsize);</td>
+    <td class="table-item-odd">int acedGetString(int cronly, const ACHAR *prompt, AcString &sResult);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">acedGetStringB</td>
+    <td class="table-item-odd">int acedGetStringB(int cronly, const ACHAR *prompt, ACHAR *result);</td>
+    <td class="table-item-odd" colspan="2">int acedGetStringB(int cronly, const ACHAR *prompt, ACHAR *result, size_t bufsize);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">acdbAngToS</td>
+    <td class="table-item-odd">int acdbAngToS(ads_real v, int unit, int prec, ACHAR *str);</td>
+    <td class="table-item-odd">int acdbAngToS(ads_real v, int unit, int prec, ACHAR *str, size_t nBufLen);</td>
+    <td class="table-item-odd">int acdbAngToS(double val, AcString &sOut, int unit, int prec);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">acdbRawAngToS</td>
+    <td class="table-item-odd">int acdbRawAngToS(ads_real v, int unit, int prec, ACHAR *str);</td>
+    <td class="table-item-odd">int acdbRawAngToS(ads_real v, int unit, int prec, ACHAR *str, size_t nBufLen);</td>
+    <td class="table-item-odd">int acdbRawAngToS(double val, AcString &sOut, int unit, int prec);</td>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">acdbRToS</td>
+    <td class="table-item-odd">int acdbRToS(ads_real val, int unit, int prec, ACHAR *str);</td>
+    <td class="table-item-odd">int acdbRToS(ads_real val, int unit, int prec, ACHAR *str, size_t nBufLen);</td>
+    <td class="table-item-odd">int acdbRToS(double val, AcString &sOut, int unit, int prec);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">acedGetCurrentColorsEx3</td>
+    <td class="table-item-odd">bool acedGetCurrentColorsEx3(AcColorSettings* pColorSettings, AcColorSettingsEx* pColorSettingsEx, AcColorSettingsEx* pColorSettingsEx2, AcColorSettingsEx* pColorSettingsEx3);</td>
+    <td class="table-item-odd" colspan="2">bool acedGetCurrentColorsEx3(AcColorSettings* pColorSettings, AcColorSettingsEx* pColorSettingsEx, AcColorSettingsEx2* pColorSettingsEx2, AcColorSettingsEx3* pColorSettingsEx3);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">acedGetRGB</td>
+    <td class="table-item-odd">Adesk::UInt32 acedGetRGB(int color);</td>
+    <td class="table-item-odd" colspan="2">Adesk::ColorRef acedGetRGB(int color);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">acedSetColorPrompt</td>
+    <td class="table-item-odd">Adesk::Boolean acedSetColorPrompt(const ACHAR* promptString, AcCmColor& color, bool bAllowMetaColor);</td>
+    <td class="table-item-odd" colspan="2">bool acedSetColorPrompt(const ACHAR* promptString, AcCmColor& color, bool bAllowMetaColor);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">acedGetSystemColorsEx3</td>
+    <td class="table-item-odd">bool acedGetSystemColorsEx3(AcColorSettings* pColorSettings, AcColorSettingsEx* pColorSettingsEx, AcColorSettingsEx* pColorSettingsEx2, AcColorSettingsEx* pColorSettingsEx3);</td>
+    <td class="table-item-odd" colspan="2">bool acedGetSystemColorsEx3(AcColorSettings* pColorSettings, AcColorSettingsEx* pColorSettingsEx, AcColorSettingsEx2* pColorSettingsEx2, AcColorSettingsEx3* pColorSettingsEx3);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">acedSetCurrentColorsEx3</td>
+    <td class="table-item-odd">bool acedSetCurrentColorsEx3(AcColorSettings* pColorSettings, AcColorSettingsEx* pColorSettingsEx, AcColorSettingsEx* pColorSettingsEx2, AcColorSettingsEx* pColorSettingsEx3);</td>
+    <td class="table-item-odd" colspan="2">bool acedSetCurrentColorsEx3(AcColorSettings* pColorSettings, AcColorSettingsEx* pColorSettingsEx, AcColorSettingsEx2* pColorSettingsEx2, AcColorSettingsEx3* pColorSettingsEx3);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">addSSgetFilterInputContextReactor</td>
+    <td class="table-item-odd">Acad::ErrorStatus addSSgetFilterInputContextReactor(AcApDocument *pDoc, AcEdSSGetFilter *pFilter);</td>
+    <td class="table-item-odd" colspan="2">Acad::ErrorStatus addSSgetFilterInputContextReactor(AcApDocument *pDoc, AcEdSSGetFilter *pFilter, int nMethodsOverridden = AcEdSSGetFilter::MethodGroups::kAll);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">setAllowDuplicateSelection</td>
+    <td class="table-item-odd">Acad::ErrorStatus setAllowDuplicateSelection(AcApDocument *pDoc, unsigned char flag);</td>
+    <td class="table-item-odd" colspan="2">Acad::ErrorStatus setAllowDuplicateSelection(AcApDocument *pDoc, bool flag);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcArrayMemCopyReallocator</td>
+    <td class="table-item-odd">copyItems</td>
+    <td class="table-item-odd">static void copyItems(T* pDest, size_t nBufLen, const T * pSource, int nCount)</td>
+    <td class="table-item-odd" colspan="2">static void copyItems(T* pDest, int nBufLen, const T * pSource, int nCount)</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcArrayMemCopyReallocator</td>
+    <td class="table-item-odd">moveItems</td>
+    <td class="table-item-odd">static void moveItems(T* pDest, size_t nBufLen, T * pSource, int nCount, bool bSameBuffer)</td>
+    <td class="table-item-odd" colspan="2">static void moveItems(T* pDest, int nBufLen, T * pSource, int nCount, bool bSameBuffer)</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcArrayObjectCopyReallocator</td>
+    <td class="table-item-odd">copyItems</td>
+    <td class="table-item-odd">static void copyItems(T* pDest, size_t nBufLen, const T * pSource, int nCount)</td>
+    <td class="table-item-odd" colspan="2">static void copyItems(T* pDest, int nBufLen, const T * pSource, int nCount)</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcArrayObjectCopyReallocator</td>
+    <td class="table-item-odd">moveItems</td>
+    <td class="table-item-odd">static void moveItems(T* pDest, size_t nBufLen, T * pSource, int nCount, bool bSameBuffer)</td>
+    <td class="table-item-odd" colspan="2">static void moveItems(T* pDest, int nBufLen, T * pSource, int nCount, bool bSameBuffer)</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcBrEdge</td>
+    <td class="table-item-odd">getCurveAsNurb</td>
+    <td class="table-item-odd">AcBr::ErrorStatus getCurveAsNurb(AcGeNurbCurve3d& nurb, const double& fitTolRequired = *(double*)NULL, double& fitTolAchieved = *(double*)NULL) const;</td>
+    <td class="table-item-odd" colspan="2">AcBr::ErrorStatus getCurveAsNurb(AcGeNurbCurve3d& nurb, const double* fitTolRequired = NULL, double* fitTolAchieved = NULL) const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcBrFace</td>
+    <td class="table-item-odd">getArea</td>
+    <td class="table-item-odd">AcBr::ErrorStatus getArea(double& area, const double& tolRequired = *(double*)NULL, double& tolAchieved = *(double*)NULL) const;</td>
+    <td class="table-item-odd" colspan="2">AcBr::ErrorStatus getArea(double& area, const double* tolRequired = NULL, double* tolAchieved = NULL) const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcBrFace</td>
+    <td class="table-item-odd">getSurfaceAsNurb</td>
+    <td class="table-item-odd">AcBr::ErrorStatus getSurfaceAsNurb(AcGeNurbSurface& nurb, const double& fitTolRequired = *(double*)NULL, double& fitTolAchieved = *(double*)NULL) const;</td>
+    <td class="table-item-odd" colspan="2">AcBr::ErrorStatus getSurfaceAsNurb(AcGeNurbSurface& nurb, const double* fitTolRequired = NULL, double*          fitTolAchieved = NULL) const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbGroup</td>
+    <td class="table-item-odd">reportUnhandledArxException</td>
+    <td class="table-item-odd">Acad::ErrorStatus append(AcDbObjectIdArray ids);</td>
+    <td class="table-item-odd" colspan="2">Acad::ErrorStatus append(const AcDbObjectIdArray& ids);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbHostApplicationServices</td>
+    <td class="table-item-odd">reportUnhandledArxException</td>
+    <td class="table-item-odd">virtual void reportUnhandledArxException(const _EXCEPTION_POINTERS *pExcPtrs, const ACHAR *pAppName);</td>
+    <td class="table-item-odd" colspan="2">virtual void reportUnhandledArxException(const ACHAR* pExceptionDescription, const ACHAR *pAppName);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGsModelReactor</td>
+    <td class="table-item-odd">onAdded</td>
+    <td class="table-item-odd">irtual bool onAdded(AcGsModel*, AcGiDrawable*, LONG_PTR);</td>
+    <td class="table-item-odd" colspan="2">virtual bool onAdded(AcGsModel*, AcGiDrawable*, Adesk::IntDbId);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGsModelReactor</td>
+    <td class="table-item-odd">onErased</td>
+    <td class="table-item-odd">virtual bool onErased(AcGsModel*, AcGiDrawable * , LONG_PTR);</td>
+    <td class="table-item-odd" colspan="2">virtual bool onErased(AcGsModel* , AcGiDrawable*, Adesk::IntDbId);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGsModelReactor</td>
+    <td class="table-item-odd">onModified</td>
+    <td class="table-item-odd">virtual bool onModified(AcGsModel*, AcGiDrawable*, LONG_PTR);</td>
+    <td class="table-item-odd" colspan="2">virtual bool onModified(AcGsModel*, AcGiDrawable*, Adesk::IntDbId);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcPlPlotErrorHandler</td>
+    <td class="table-item-odd">getCompanyString</td>
+    <td class="table-item-odd">void getCompanyString(ACHAR*& pCompanyString) const;</td>
+    <td class="table-item-odd" colspan="2">void getCompanyString(AcString& pCompanyString) const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcPlPlotErrorHandler</td>
+    <td class="table-item-odd">getProductString</td>
+    <td class="table-item-odd">void getProductString(ACHAR*& pProductString) const;</td>
+    <td class="table-item-odd" colspan="2">void getProductString(AcString& pProductString) const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcPlPlotErrorHandler</td>
+    <td class="table-item-odd">getProgramString</td>
+    <td class="table-item-odd">void getProgramString(ACHAR*& pProgramString) const;</td>
+    <td class="table-item-odd" colspan="2">void getProgramString(AcString& pProgramString) const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcString</td>
+    <td class="table-item-odd">find</td>
+    <td class="table-item-odd">int find(const ACHAR *psz) const;</td>
+    <td class="table-item-odd" colspan="2">int find(const ACHAR *psz, int nStartPos = 0) const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcString</td>
+    <td class="table-item-odd">findOneOf</td>
+    <td class="table-item-odd">int findOneOf(const ACHAR *psz) const;</td>
+    <td class="table-item-odd" colspan="2">int findOneOf(const ACHAR *psz, int nStartPos = 0) const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcTrayItemBubbleWindowControl</td>
+    <td class="table-item-odd">AcTrayItemBubbleWindowControl</td>
+    <td class="table-item-odd">AcTrayItemBubbleWindowControl(const CString& strTitle, const CString& strText, const CString& strHyperText = ACRX_T(""), const CString& strHyperLink = ACRX_T(""), const CString& strText2 = ACRX_T(""));</td>
+    <td class="table-item-odd" colspan="2">AcTrayItemBubbleWindowControl(const CString& strTitle, const CString& strText, const CString& strHyperText = ACRX_T(""), const CString& strHyperLink = ACRX_T(""), const CString& strText2 = ACRX_T(""), const CString& strCheckboxText = ACRX_T(""), bool  bIsChecked = false);</td>
+    </TR>
+</table>
+<p class="define_head_2">已经弃用的接口([[deprecated](...)...])</p>
+<table class="table-desc">
+    <TR>
+    <TH class="dev_body_text">类</TH>
+    <TH >声明[deprecated]</TH>
+    <TH >使用替代函数</TH>
+    </TR>   
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">Adesk::Boolean acgsDrawableCached(AcGiDrawable *pDrawable);</td>
+    <td class="table-item-odd">Adesk::Boolean acgsDrawableCached(AcGsGraphicsKernel* pKernel, AcGiDrawable* pDrawable);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">AcGsModel* acgsGetGsModel(const AcDbDatabase* pDb);</td>
+    <td class="table-item-odd">AcGsModel* acgsGetGsModel(AcGsGraphicsKernel* pKernel, const AcDbDatabase* pDb);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">AcGsModel* acgsGetGsHighlightModel(const AcDbDatabase* pDb);</td>
+    <td class="table-item-odd">AcGsModel* acgsGetGsHighlightModel(AcGsGraphicsKernel* pKernel, const AcDbDatabase* pDb);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">void acgsSetGsModel(const AcDbDatabase* pDb, AcGsModel* pModel);</td>
+    <td class="table-item-odd">void acgsSetGsModel(AcGsGraphicsKernel* pKernel, const AcDbDatabase* pDb, AcGsModel* pModel);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">void acgsSetGsHighlightModel(const AcDbDatabase* pDb, AcGsModel* pModel);</td>
+    <td class="table-item-odd">void acgsSetGsHighlightModel(AcGsGraphicsKernel* pKernel, const AcDbDatabase* pDb, AcGsModel* pModel);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGsManager</td>
+    <td class="table-item-odd">virtual void setGsModel(const AcDbDatabase* pDb, AcGsModel* pModel) = 0;</td>
+    <td class="table-item-odd">virtual void AcGsManager2::setGsModel(AcGsGraphicsKernel* pKernel, const AcDbDatabase* pDb, AcGsModel* pModel) = 0;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGsManager</td>
+    <td class="table-item-odd">virtual AcGsModel* gsModel(const AcDbDatabase* pDb) const = 0;</td>
+    <td class="table-item-odd">virtual AcGsModel* AcGsManager2::gsModel(AcGsGraphicsKernel* pKernel, const AcDbDatabase* pDb) const = 0;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGsManager</td>
+    <td class="table-item-odd">virtual void setGsHighlightModel(const AcDbDatabase* pDb, AcGsModel* pModel) = 0;</td>
+    <td class="table-item-odd">virtual void AcGsManager2::setGsHighlightModel(AcGsGraphicsKernel* pKernel, const AcDbDatabase* pDb, AcGsModel* pModel) = 0;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGsManager</td>
+    <td class="table-item-odd">virtual AcGsModel* gsHighlightModel(const AcDbDatabase* pDb) const = 0;</td>
+    <td class="table-item-odd">virtual AcGsModel* AcGsManager2::gsHighlightModel(AcGsGraphicsKernel* pKernel, const AcDbDatabase* pDb) const = 0;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGsManager</td>
+    <td class="table-item-odd">virtual bool hasGsModel(const AcDbDatabase* pDb) const = 0;</td>
+    <td class="table-item-odd">virtual bool AcGsManager2::hasGsModel(AcGsGraphicsKernel* pKernel, const AcDbDatabase* pDb) const = 0;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmColor</td>
+    <td class="table-item-odd">Acad::ErrorStatus setColorMethod(AcCmEntityColor::ColorMethod eColorMethod) override;</td>
+    <td class="table-item-odd">void AcCmColor::setNone(), void AcCmColor::setByBlock(), void AcCmColor::setByLayer(), etc</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmColor</td>
+    <td class="table-item-odd">Adesk::UInt32 color() const override;</td>
+    <td class="table-item-odd">Adesk::RGBQuad AcCmColor::getRGB() const override;<br/>
+        Adesk::UInt32 AcCmColor::getRGBM() const override;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmColor</td>
+    <td class="table-item-odd">Acad::ErrorStatus setColor(Adesk::UInt32 color) override;</td>
+    <td class="table-item-odd">Acad::ErrorStatus AcCmColor::setRGB(Adesk::RGBQuad rgbquad) override;<br/>
+        Acad::ErrorStatus AcCmColor::setRGBM(Adesk::UInt32 rgbmValue) override; </td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmColor</td>
+    <td class="table-item-odd">Acad::ErrorStatus setRed(Adesk::UInt8 red) override;</td>
+    <td class="table-item-odd">Acad::ErrorStatus AcCmColor::setRGB(Adesk::UInt8 red, Adesk::UInt8 green, Adesk::UInt8 blue) override;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmColor</td>
+    <td class="table-item-odd">Acad::ErrorStatus setGreen(Adesk::UInt8 green) override;</td>
+    <td class="table-item-odd">Acad::ErrorStatus AcCmColor::setRGB(Adesk::UInt8 red, Adesk::UInt8 green, Adesk::UInt8 blue) override;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmColor</td>
+    <td class="table-item-odd">Acad::ErrorStatus setBlue(Adesk::UInt8 blue) override;</td>
+    <td class="table-item-odd">Acad::ErrorStatus AcCmColor::setRGB(Adesk::UInt8 red, Adesk::UInt8 green, Adesk::UInt8 blue) override;</td>
+    </TR>  
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">AcCmEntityColor(ColorMethod eColorMethod);</td>
+    <td class="table-item-odd">AcCmEntityColor::AcCmEntityColor(); <br/>
+        then call to void AcCmEntityColor::setNone(), void AcCmEntityColor::setByBlock(), void AcCmEntityColor::setByLayer(), etc</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">Acad::ErrorStatus setColorMethod(ColorMethod eColorMethod);</td>
+    <td class="table-item-odd">void AcCmEntityColor::setNone(), void AcCmEntityColor::setByBlock(), void AcCmEntityColor::setByLayer(), etc</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">Acad::ErrorStatus setColor(Adesk::UInt32 color);</td>
+    <td class="table-item-odd">Acad::ErrorStatus AcCmEntityColor::setRGBM(Adesk::UInt32 rgbmValue);<br/>
+        Acad::ErrorStatus AcCmEntityColor::setRGB(Adesk::UInt8 red, Adesk::UInt8 green, Adesk::UInt8 blue);<br/>
+        Acad::ErrorStatus AcCmEntityColor::setRGB(Adesk::RGBQuad rgbquad);<br/>
+        Acad::ErrorStatus AcCmEntityColor::setCOLORREF(Adesk::ColorRef cref);
+    </td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">Adesk::UInt32 color() const;</td>
+    <td class="table-item-odd">Adesk::UInt32 AcCmEntityColor::getRGBM() const;<br/>
+        Adesk::RGBQuad AcCmEntityColor::getRGB() const;<br/>
+        Adesk::ColorRef AcCmEntityColor::getCOLORREF() const;
+    </td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">Acad::ErrorStatus setRed(Adesk::UInt8 red);</td>
+    <td class="table-item-odd">Acad::ErrorStatus AcCmEntityColor::setRGB(Adesk::UInt8 red, Adesk::UInt8 green, Adesk::UInt8 blue);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">Acad::ErrorStatus setGreen(Adesk::UInt8 green);</td>
+    <td class="table-item-odd">Acad::ErrorStatus AcCmEntityColor::setRGB(Adesk::UInt8 red, Adesk::UInt8 green, Adesk::UInt8 blue);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">Acad::ErrorStatus setBlue(Adesk::UInt8 blue);</td>
+    <td class="table-item-odd">Acad::ErrorStatus AcCmEntityColor::setRGB(Adesk::UInt8 red, Adesk::UInt8 green, Adesk::UInt8 blue);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">Adesk::UInt32 trueColor() const;</td>
+    <td class="table-item-odd">AcCmEntityColor AcCmEntityColor::makeTrueColor() const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">Adesk::UInt8 trueColorMethod() const;</td>
+    <td class="table-item-odd">AcCmEntityColor::ColorMethod AcCmEntityColor::colorMethod() const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">Acad::ErrorStatus setTrueColor();</td>
+    <td class="table-item-odd">AcCmEntityColor AcCmEntityColor::makeTrueColor() const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">Acad::ErrorStatus setTrueColorMethod();</td>
+    <td class="table-item-odd">AcCmEntityColor AcCmEntityColor::makeTrueColor() const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Adesk::UInt32 lookUpRGB(Adesk::UInt8 colorIndex);</td>
+    <td class="table-item-odd">AcCmEntityColor makeRGB(Adesk::ColorRef background_rgb = 0) const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Adesk::UInt8 lookUpACI(Adesk::UInt8 red, Adesk::UInt8 green, Adesk::UInt8 blue);</td>
+    <td class="table-item-odd">Adesk::Int16 colorIndex() const;</td>
+    </TR>
+
+    <TR>
+    <td class="table-item-odd">AcCmComplexColor</td>
+    <td class="table-item-odd">virtual Acad::ErrorStatus setColorMethod(AcCmEntityColor::ColorMethod eColorMethod);</td>
+    <td class="table-item-odd">void AcCmComplexColor::setNone(), void AcCmComplexColor::setByBlock(), void AcCmComplexColor::setByLayer(), etc</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmComplexColor</td>
+    <td class="table-item-odd">virtual Adesk::UInt32 color() const;</td>
+    <td class="table-item-odd">Adesk::UInt32 AcCmComplexColor::getRGBM() const;<br/>
+        Adesk::RGBQuad AcCmComplexColor::getRGB() const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmComplexColor</td>
+    <td class="table-item-odd">virtual Acad::ErrorStatus setColor(Adesk::UInt32 color);</td>
+    <td class="table-item-odd">Acad::ErrorStatus AcCmComplexColor::setRGB(Adesk::UInt32 rgbValue);<br/>
+        Acad::ErrorStatus AcCmComplexColor::setRGBM(Adesk::UInt32 rgbmValue);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmComplexColor</td>
+    <td class="table-item-odd">virtual Acad::ErrorStatus setRed(Adesk::UInt8 red);</td>
+    <td class="table-item-odd">Acad::ErrorStatus AcCmComplexColor::setRGB(Adesk::UInt32 rgbValue);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmComplexColor</td>
+    <td class="table-item-odd">virtual Acad::ErrorStatus setGreen(Adesk::UInt8 green);</td>
+    <td class="table-item-odd">Acad::ErrorStatus AcCmComplexColor::setRGB(Adesk::UInt32 rgbValue);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmComplexColor</td>
+    <td class="table-item-odd">virtual Acad::ErrorStatus setBlue(Adesk::UInt8 blue);</td>
+    <td class="table-item-odd">Acad::ErrorStatus AcCmComplexColor::setRGB(Adesk::UInt32 rgbValue);</td>
+    </TR>
+
+</table>
+<p class="define_head_2">已经删除的接口</p>
+<table class="table-desc">
+    <TR>
+    <TH class="dev_body_text">类</TH>
+    <TH >声明(已经删除)</TH>
+    <TH >使用替代函数</TH>
+    </TR>    
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">void acedRegenLayers(const AcDbObjectIdArray& layerIds, int nParam1, int nParam2);</td>
+    <td class="table-item-odd">extern void zcedRegenLayers(const ZcDbObjectIdArray& layerIds, int nParam1, int nParam2); internal use.</td>
+    </TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">void acgsSetLineWeightDisplay(AcGsDevice*, bool val);</td>
+    <td class="table-item-odd">extern void zcgsSetLineWeightDisplay(ZcGsDevice*, bool val); internal use.</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">Acad::ErrorStatus addSSgetFilterInputContextReactor(AcApDocument *pDoc, AcEdSSGetFilter2 *pFilter);</td>
+    <td class="table-item-odd">Acad::ErrorStatus addSSgetFilterInputContextReactor(AcApDocument *pDoc, AcEdSSGetFilter *pFilter, int nMethodsOverridden = AcEdSSGetFilter::MethodGroups::kAll);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">Acad::ErrorStatus removeSSgetFilterInputContextReactor(AcApDocument *pDoc, AcEdSSGetFilter2 *pFilter);</td>
+    <td class="table-item-odd">Acad::ErrorStatus removeSSgetFilterInputContextReactor(AcApDocument *pDoc, AcEdSSGetSubSelectFilter *pFilter);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">Acad::ErrorStatus removeSSgetFilterInputContextReactor(AcApDocument *pDoc, AcEdSSGetFilter3 *pFilter);</td>
+    <td class="table-item-odd">Acad::ErrorStatus removeSSgetFilterInputContextReactor(AcApDocument *pDoc, AcEdSSGetSubSelectFilter *pFilter);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">Acad::ErrorStatus addSSgetFilterInputContextReactor(AcApDocument *pDoc, AcEdSSGetFilter4 *pFilter);</td>
+    <td class="table-item-odd">Acad::ErrorStatus addSSgetFilterInputContextReactor(AcApDocument *pDoc, AcEdSSGetFilter *pFilter, int nMethodsOverridden = AcEdSSGetFilter::MethodGroups::kAll);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">Acad::ErrorStatus removeSSgetFilterInputContextReactor(AcApDocument *pDoc, AcEdSSGetFilter4 *pFilter);</td>
+    <td class="table-item-odd">Acad::ErrorStatus removeSSgetFilterInputContextReactor(AcApDocument *pDoc, AcEdSSGetSubSelectFilter *pFilter);</td>
+    </TR>
+
+    <TR>
+    <td class="table-item-odd">AcApLayoutManager</td>
+    <td class="table-item-odd">virtual const ACHAR * findActiveTab() final;</td>
+    <td class="table-item-odd">virtual Acad::ErrorStatus AcApLayoutManager::getActiveTab(AcString & sName) = 0; </td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcApLayoutManager</td>
+    <td class="table-item-odd">virtual ACHAR *getNextNewLayoutName(AcDbDatabase* useDb = nullptr) final;</td>
+    <td class="table-item-odd">virtual Acad::ErrorStatus AcApLayoutManager::generateNextNewLayoutName(AcString & sName, AcDbDatabase* useDb = nullptr) = 0; </td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmColor</td>
+    <td class="table-item-odd">AcCmComplexColor* complexColor() const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmColor</td>
+    <td class="table-item-odd">bool isComplex() const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmColor</td>
+    <td class="table-item-odd">void setComplexColor(AcCmComplexColor* pComplex);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Acad::ErrorStatus setColorMethod(RGBM* rgbm, ColorMethod eColorMethod);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static ColorMethod colorMethod(const RGBM* rgbm);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Acad::ErrorStatus setColor(RGBM* rgbm, Adesk::UInt32 color);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Adesk::UInt32 color(const RGBM* rgbm);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Acad::ErrorStatus setColorIndex(RGBM* rgbm, Adesk::Int16 colorIndex);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Adesk::Int16 colorIndex(const RGBM* rgbm);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Acad::ErrorStatus setLayerIndex(RGBM* rgbm, Adesk::Int32 layerIndex);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Adesk::Int32 layerIndex(const RGBM* rgbm);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Acad::ErrorStatus setPenIndex(RGBM* rgbm, Adesk::UInt16 penIndex);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Adesk::UInt16 penIndex(const RGBM* rgbm);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Acad::ErrorStatus setRGB(RGBM* rgbm,Adesk::UInt8 red, Adesk::UInt8 green, Adesk::UInt8 blue);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Acad::ErrorStatus setRed(RGBM* rgbm, Adesk::UInt8 red);</td>
+    <td class="table-item-odd">Acad::ErrorStatus AcCmEntityColor::setRed(Adesk::UInt8 red);</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Acad::ErrorStatus setGreen(RGBM* rgbm, Adesk::UInt8 green);</td>
+    <td class="table-item-odd">Acad::ErrorStatus AcCmEntityColor::setGreen(Adesk::UInt8 green); </td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Acad::ErrorStatus setBlue(RGBM* rgbm, Adesk::UInt8 blue);</td>
+    <td class="table-item-odd">Acad::ErrorStatus AcCmEntityColor::setBlue(Adesk::UInt8 blue); </td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Adesk::UInt8 red(const RGBM* rgbm);</td>
+    <td class="table-item-odd">Adesk::UInt8 AcCmEntityColor::red() const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Adesk::UInt8 green(const RGBM* rgbm);</td>
+    <td class="table-item-odd">Adesk::UInt8 AcCmEntityColor::green() const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Adesk::UInt8 blue(const RGBM* rgbm);</td>
+    <td class="table-item-odd">Adesk::UInt8 AcCmEntityColor::blue() const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static bool isByColor(const RGBM* rgbm);</td>
+    <td class="table-item-odd">bool AcCmEntityColor::isByColor() const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static bool isByLayer(const RGBM* rgbm);</td>
+    <td class="table-item-odd">bool AcCmEntityColor::isByLayer() const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static bool isByBlock(const RGBM* rgbm);</td>
+    <td class="table-item-odd">bool AcCmEntityColor::isByBlock() const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static bool isByACI(const RGBM* rgbm);</td>
+    <td class="table-item-odd">bool AcCmEntityColor::isByACI() const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static bool isByPen(const RGBM* rgbm);</td>
+    <td class="table-item-odd">bool AcCmEntityColor::isByPen() const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static bool isForeground(const RGBM* rgbm);</td>
+    <td class="table-item-odd">bool AcCmEntityColor::isForeground() const; </td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static bool isLayerOff(const RGBM* rgbm);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static bool isLayerFrozen(const RGBM* rgbm);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static bool isNone(const RGBM* rgbm);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Adesk::UInt32 trueColor(const RGBM* rgbm);</td>
+    <td class="table-item-odd">AcCmEntityColor AcCmEntityColor::makeTrueColor() const;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Adesk::UInt8 trueColorMethod( Adesk::Int16);</td>
+    <td class="table-item-odd">ColorMethod AcCmEntityColor::colorMethod() const; </td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Acad::ErrorStatus setTrueColor(RGBM* rgbm);</td>
+    <td class="table-item-odd">Acad::ErrorStatus AcCmEntityColor::setTrueColor(); </td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcCmEntityColor</td>
+    <td class="table-item-odd">static Acad::ErrorStatus setTrueColorMethod(RGBM* rgbm);</td>
+    <td class="table-item-odd">Acad::ErrorStatus AcCmEntityColor::setTrueColorMethod(); </td>
+    </TR>
+    <TR>
+    <TR>
+    <td class="table-item-odd">AcDbHostApplicationServices</td>
+    <td class="table-item-odd">virtual bool getDefaultPlotCfgInfo(ACHAR * plotDeviceName, size_t nDevNameLen, ACHAR * plotStyleName, size_t nStyleNameLen);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbHostApplicationServices</td>
+    <td class="table-item-odd">template<size_t nDevNameLen, size_t nStyleNameLen>bool getDefaultPlotCfgInfo(ACHAR (&plotDeviceName)[nDevNameLen], ACHAR (&plotStyleName)[nStyleNameLen])</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbHostApplicationServices</td>
+    <td class="table-item-odd">Acad::ErrorStatus getRemoteFile(const ACHAR * pszURL, AcString& strLocalFile);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbDetailViewStyle</td>
+    <td class="table-item-odd">	virtual Acad::ErrorStatus dwgInFields(AcDbDwgFiler* pFiler);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbDetailViewStyle</td>
+    <td class="table-item-odd">	virtual Acad::ErrorStatus dwgOutFields(AcDbDwgFiler* pFiler) const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbDetailViewStyle</td>
+    <td class="table-item-odd">	virtual Acad::ErrorStatus dxfInFields(AcDbDxfFiler* pFiler);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbDetailViewStyle</td>
+    <td class="table-item-odd">	virtual Acad::ErrorStatus dxfOutFields(AcDbDxfFiler* pFiler) const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbField</td>
+    <td class="table-item-odd">Acad::ErrorStatus getHyperlink(ACHAR** pszName,ACHAR** pszDescription,ACHAR** pszSubLocation,ACHAR** pszDisplayString,Adesk::Int32* pFlag) const;</td>
+    <td class="table-item-odd">Acad::ErrorStatus AcDbField::getHyperlink(AcString * psName, AcString * psDescription, AcString * psSubLocation, AcString * psDisplayString, Adesk::Int32* pFlag) const; </td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbDxfFiler</td>
+    <td class="table-item-odd">inline Acad::ErrorStatus writeChar(AcDb::DxfCode c, Adesk::Int8 n);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbDxfFiler</td>
+    <td class="table-item-odd">Acad::ErrorStatus writeItem(AcDb::DxfCode dc, Adesk::Int64 val);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbDatabase</td>
+    <td class="table-item-odd">void setGsHighlightModel(AcGsModel*);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbDatabase</td>
+    <td class="table-item-odd">AcGsModel* gsHighlightModel() const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbMaterial</td>
+    <td class="table-item-odd">virtual AcGsNode* gsNode(void) const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbMaterial</td>
+    <td class="table-item-odd">vrtual void setGsNode(AcGsNode* pNode);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbModelDocViewStyle</td>
+    <td class="table-item-odd">virtual AcGsNode* gsNode(void) const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbModelDocViewStyle</td>
+    <td class="table-item-odd">vrtual void setGsNode(AcGsNode* pNode);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbModelDocViewStyle</td>
+    <td class="table-item-odd">virtual Acad::ErrorStatus dwgInFields(AcDbDwgFiler* pFiler);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbModelDocViewStyle</td>
+    <td class="table-item-odd">virtual Acad::ErrorStatus dwgOutFields(AcDbDwgFiler* pFiler) const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbModelDocViewStyle</td>
+    <td class="table-item-odd">virtual Acad::ErrorStatus dxfInFields(AcDbDxfFiler* pFiler);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbModelDocViewStyle</td>
+    <td class="table-item-odd">virtual Acad::ErrorStatus dxfOutFields(AcDbDxfFiler* pFiler) const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbSectionViewStyle</td>
+    <td class="table-item-odd">Acad::ErrorStatus dwgInFields(AcDbDwgFiler* pFiler);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbSectionViewStyle</td>
+    <td class="table-item-odd">Acad::ErrorStatus dwgOutFields(AcDbDwgFiler* pFiler) const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbSectionViewStyle</td>
+    <td class="table-item-odd">Acad::ErrorStatus dxfInFields(AcDbDxfFiler* pFiler);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbSectionViewStyle</td>
+    <td class="table-item-odd">Acad::ErrorStatus dxfOutFields(AcDbDxfFiler* pFiler) const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbSubDMesh</td>
+    <td class="table-item-odd">Acad::ErrorStatus dwgInFields(AcDbDwgFiler* pFiler);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbSubDMesh</td>
+    <td class="table-item-odd">Acad::ErrorStatus dwgOutFields(AcDbDwgFiler* pFiler) const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbSubDMesh</td>
+    <td class="table-item-odd">Acad::ErrorStatus dxfInFields(AcDbDxfFiler* pFiler);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbSubDMesh</td>
+    <td class="table-item-odd">Acad::ErrorStatus dxfOutFields(AcDbDxfFiler* pFiler) const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbSun</td>
+    <td class="table-item-odd">AcGsNode* gsNode() const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbSun</td>
+    <td class="table-item-odd">void setGsNode(AcGsNode* gsnode);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbBlockTableRecord</td>
+    <td class="table-item-odd">AcGsNode* gsNode() const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbBlockTableRecord</td>
+    <td class="table-item-odd">void setGsNode(AcGsNode* gsnode);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbLayerTableRecord</td>
+    <td class="table-item-odd">AcGsNode* gsNode() const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbLayerTableRecord</td>
+    <td class="table-item-odd">void setGsNode(AcGsNode* gsnode);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbLinetypeTableRecord</td>
+    <td class="table-item-odd">AcGsNode* gsNode() const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbLinetypeTableRecord</td>
+    <td class="table-item-odd">void setGsNode(AcGsNode* gsnode);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbViewportTableRecord</td>
+    <td class="table-item-odd">AcGsNode* gsNode() const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbViewportTableRecord</td>
+    <td class="table-item-odd">void setGsNode(AcGsNode* gsnode);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbVisualStyle</td>
+    <td class="table-item-odd">virtual AcGsNode* gsNode(void) const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcDbVisualStyle</td>
+    <td class="table-item-odd">virtual void setGsNode(AcGsNode* pNode);</td>
+    <td class="table-item-odd"></td>
+    </TR>    
+    <TR>
+    <td class="table-item-odd">AcEdSSGetFilter2</td>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">AcEdSSGetFilter</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcEdSSGetFilter3</td>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd">AcEdSSGetFilter</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcEditorReactor</td>
+    <td class="table-item-odd">void beginDwgOpen(ACHAR*) final;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGeNurbSurface</td>
+    <td class="table-item-odd">void setnumControlPointsInU(int);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGeNurbSurface</td>
+    <td class="table-item-odd">void setnumControlPointsInV(int);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGeNurbSurface</td>
+    <td class="table-item-odd">void setsingularityInU(int);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGeNurbSurface</td>
+    <td class="table-item-odd">void setsingularityInV(int);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGeNurbSurface</td>
+    <td class="table-item-odd">void setWeights(AcGeDoubleArray& weights);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGeSphere</td>
+    <td class="table-item-odd">AcGeSphere& setnorthAxis (AcGeVector3d val);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGeSphere</td>
+    <td class="table-item-odd">AcGeSphere& setrefAxis (AcGeVector3d val)；</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGeCircArc3d</td>
+    <td class="table-item-odd">AcGeTorus& set(const AcGePoint3d& cent,const AcGeVector3d& nrm,const AcGeVector3d& refVec, double radius,double startAngle, double endAngle);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGeCircArc3d</td>
+    <td class="table-item-odd">AcGeTorus& set(const AcGePoint3d& cent,const AcGeVector3d& nrm,double radius);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGiDrawable</td>
+    <td class="table-item-odd">AcGsNode* gsNode(void) const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGiDrawable</td>
+    <td class="table-item-odd">void setGsNode(AcGsNode * gsnode);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGsKernelDescriptor</td>
+    <td class="table-item-odd">bool requires(const AcUniqueString *capability) const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcGsView</td>
+    <td class="table-item-odd">virtual bool RenderToImage(Atil::Image* pOutput, AcGiDrawable* pSettings, AcGsRenderProgressMonitor* pProgressMonitor, const AcGsDCRect & rectScreen, bool bReuseScene = false)= 0;</td>
+    <td class="table-item-odd">virtual bool renderToImage(Atil::Image* pOutput, AcGiDrawable* pSettings, AcGsRenderProgressMonitor* pProgressMonitor, const AcGsDCRect & rectScreen, bool bReuseScene = false) = 0;</td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcPlPlotConfig</td>
+    <td class="table-item-odd">virtual unsigned long isCustomPossible(double width, double height,bool bIsDimensional, bool bIsSheet, int dpi, constACHAR * pPC3Dir) const;</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcPlPlotConfig</td>
+    <td class="table-item-odd">virtual Acad::ErrorStatus makeCustomMediaFromSizeDesc(HT_Media_Size * pSize, HT_Media_Description * pDesc,bool bSameDriver, bool bSavePC3,const ACHAR * pSourceEntry, const ACHAR * pSourceName,ACHAR *& pCanonicalSizeName, ACHAR *& pLocalizedSizeName,ACHAR *& pPMPPath, ACHAR *& pPC3Path, int dpi, double & scaleFactor);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcPlPlotConfigManager</td>
+    <td class="table-item-odd">virtual HT_Error_Handler* acadErrorHandler();</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcPlPlotConfigManager</td>
+    <td class="table-item-odd">virtual HT_Error_Handler* errorHandler();</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcPlPlotConfigManager</td>
+    <td class="table-item-odd">virtual HT_Thin_Plot_Config_Manager* thinPltCfgMgr();</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcPlPlotInfo</td>
+    <td class="table-item-odd">AcString& OrgFilePath();</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcPublishUIReactor2</td>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">CAcUiDialogBar</td>
+    <td class="table-item-odd"></td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">CAdUiGroupCtrl</td>
+    <td class="table-item-odd">bool loadResource(LPCTSTR strResId, CBitmap *& bBitmap, void* & pImage);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">CAdUiGroupCtrl</td>
+    <td class="table-item-odd">void* loadRCDATAResource(LPCTSTR strResId, HINSTANCE hInst, const CZdUiTheme* pTheme);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">CAdUiGroupCtrl</td>
+    <td class="table-item-odd">void* loadIconResource(LPCTSTR strResId, HINSTANCE hInst, const CZdUiTheme* pTheme);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">CAdUiGroupCtrl</td>
+    <td class="table-item-odd">virtual bool addWnd(CWnd* pWnd, LPCTSTR pszTitle, LPCTSTR pszToolTip, LPCTSTR pszResId, CBitmap* pBMP, void* pImage);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">CAdUiGroupCtrl</td>
+    <td class="table-item-odd">bool addBmpBtnToHeader(LPCTSTR strResId, CBitmap* pBmp, void* pImage, ZdUiBmpBtnFcnPtr fcnPtr,DWORD& dwCookie, LPCTSTR pszToolTip);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">CAdUiGroupCtrl</td>
+    <td class="table-item-odd">void clearImages(ZdUiBmpBtnData & btnData);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">CAdUiPathname</td>
+    <td class="table-item-odd">friend void GetDisplayNameHelper(const CAdUiPathname* pPathName, AcString& strResult, int maxchars );</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">CAdUiPathname</td>
+    <td class="table-item-odd">friend CAdUiVolumeDescriptor* NewVolDescriptorHelper(const CAdUiPathname* pPathName, const AcString& vol_name);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">CAdUiPathname</td>
+    <td class="table-item-odd">friend bool IsValidOnColon(const AcString* work);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">CAdUiPathname</td>
+    <td class="table-item-odd">friend bool WasAbsoluteHelper(path_category pc);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AdCharFormatter</td>
+    <td class="table-item-odd">static int wcharNonNativeToRTF(unsigned nCodePage,const wchar_t *szSrc,int cchSrcLen,char *szDst,int *pcbDstSize);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcHeapOperators</td>
+    <td class="table-item-odd">static void * allocRawMem(size_t size);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcHeapOperators</td>
+    <td class="table-item-odd">static void * allocRawMem(size_t size, const char *pFName,int nLine);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcHeapOperators</td>
+    <td class="table-item-odd">static void freeRawMem(void *p);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">AcHeapOperators</td>
+    <td class="table-item-odd">static void freeRawMem(void *p, const char *pFName, int nLine);</td>
+    <td class="table-item-odd"></td>
+    </TR>
+    <TR>
+    <td class="table-item-odd">ZwIntVector3d</td>
+    <td class="table-item-odd">ZwIntVector3d();</td>
+    <td class="table-item-odd">AcGePoint3d</td>
+    </TR>
+</table>
+
+<hr algin="left" >
+<p class="define_head_1">需要进行的其他修改</p>
+<ul class="command_ul">
+<li class="dev_body_text">COM类库和标识修改。类库文件需要从zwcad21.tlb修改为zwcad25.tlb，COM接口的标识符xxx.xxx.2021需要修改为xxx.xxx.2026(如ZWCAD.Application.2021 → ZWCAD.Application.2026)。</li>
+<li class="dev_body_text">年度版本等平台信息修改。具体见<a href="4-4-Upgrading%20between%20compatible%20binary%20versions%20of%20ZWCAD.htm">二进制兼容版本移植升级</a>。</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2025 ZWSOFT CO., LTD.(Guangzhou). All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

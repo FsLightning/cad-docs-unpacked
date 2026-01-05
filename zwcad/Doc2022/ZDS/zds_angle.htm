@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>zds_angle</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<script language="javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2022 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">zds_angle</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+<p class="cmd_line"><font color="#186DAD"><b>double zds_angle (const zds_point point1, const zds_point point2);</b></font></p>
+<p class="body_text">Determine the angle given by these points.</p>
+<hr algin="left" />
+<p class="body_text">This function returns the angle between point1 and point2 in the current UCS. The first point determines the line parallel to the x-axis. When point1 is plotted and connected to point2, the resultant angle is returned, in radians.</p>
+<p class="body_text">This function returns the angle, a real number, in radians.</p>
+<hr algin="left" />
+<p class="define_head_1">Example</p>
+<p class="define_text_1">zds_real returnr;</p>
+<p class="define_text_1">zds_point firstpt,secondpt;</p>
+<p class="define_text_1">zds_getpoint(NULL,"\nFirst point for angle: ",firstpt);</p>
+<p class="define_text_1">zds_getpoint(firstpt,"\nSecond point: ",secondpt);</p>
+<p class="define_text_1">returnr=<b>zds_angle</b>(firstpt,secondpt);</p>
+<p class="define_text_1">zds_printf("\nThe angle is %f radians",returnr);</p>
+<p class="define_text_1">Prints:</p>
+<p class="define_text_1">First point for angle:pick point 1,1</p>
+<p class="define_text_1">Second point: pick second point 3,3</p>
+<p class="define_text_1">The angle is 0.7854 radians.</p>
+<hr algin="left" />
+<p class="define_head_1">Tell me about...</p>
+<ul class="command_ul">
+	<li>
+	<p class="define_text" style="margin-left: 0pt">
+	<a href="Programming%20Overview%20of%20ZDS.htm">Programming Overview of ZDS (ZWCAD Development System)</a></p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_getangle.htm">zds_getangle</a></p>
+	</li>
+</ul>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2022 广州中望龙腾软件股份有限公司 All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

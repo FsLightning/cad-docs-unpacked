@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ZRX接口和平台功能差异</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+
+
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">中望CAD 2026 ZRX移植指南</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">ZRX接口和平台功能差异</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+
+<p class="define_head_1">ZRX接口差异</p>
+<table class="table-desc">
+<tr>
+<th>接口说明</th>
+<th>ZWCAD2026</th>
+<th>AutoCAD2024</th>
+</tr>
+<tr>
+<td>入口函数</td>
+<td>extern "C" ZcRx::AppRetCode __declspec(dllexport) zcrxEntryPoint (ZcRx::AppMsgCode msg, void *pkt);</td>
+<td>extern "C" AcRx::AppRetCode __declspec(dllexport) acrxEntryPoint (AcRx::AppMsgCode msg, void *pkt);</td>
+</tr>
+</table>
+
+<p class="define_head_2">COM接口<p>
+<p class="define_text_2"><p>
+<table class="table-desc">
+<tr>
+<th>说明</th>
+<th>ZWCAD2026</th>
+<th>AutoCAD2024</th>
+</tr>
+<tr>
+<td>类库文件</td>
+<td>zwcad25.tlb</td>
+<td>axdb24enu.tlb</td>
+</tr>
+<td>COM对象标识符</td>
+<td>"ZWCAD.Application.2026"\"ZWCAD.ZcCmColor.2026"\"ZWCAD.ZxDbDocument.2026"\...</td>
+<td>"AutoCAD.Application.24"\"AutoCAD.AcCmColor.24"\"ObjectDBX.AxDbDocument.24"\...</td>
+</tr>
+<td>COM对象类名</td>
+<td>IZcadLWPolyline\ZcadApplication\...</td>
+<td>IAcadLWPolyline\AcadApplication\...</td>
+</tr>
+<td>COM对象函数和枚举</td>
+<td>IZcadApplication::LoadZrx\ZcWindowState::zcMax\...</td>
+<td>IAcadApplication::LoadArx\AcWindowState::acMax\...</td>
+</tr>
+</table>
+
+<p class="define_head_2">内部接口<p>
+<p class="define_text_2">见<a href="3-3-Use%20the%20internal%20API.htm">内部接口使用</a>。<p>
+
+<hr algin="left" >
+<p class="define_head_1">平台功能差异<p>
+<p class="define_text_1">中望CAD致力于为用户提供便捷、高效、优质的产品功能，在主体功能上兼容其他CAD平台，维持其他平台用户习惯，但是也存在一些细微的差异。如果在二次开发过程中，遇到了这些差异，请注意适配修改。<p>
+<p class="define_head_2">功能文件<p>
+<p class="define_text_2">如果在源码中指定了CAD相关文件名作为程序的硬编码字符串，需要进行文件名的替换。<p>
+<ol class="command_ol">
+	<li class="define_text_1" value="1">ZRX文件。在AutoCAD中可以基于ObjectARX SDK编译<strong>*.arx/*.dbx/*.crx</strong>后缀的应用程序，中望CAD对应的文件为<strong>*.zrx</strong>。</li>
+	<li class="define_text_1" value="2">模板文件。在AutoCAD中安装自带的模板文件有<strong>acad.dwt/acadiso.dwt</strong>等，中望CAD对应的模板文件为<strong>zwcad.dwt/zwcadiso.dwt</strong>等。</li>
+    <li class="define_text_1" value="3">线型文件。在AutoCAD中安装自带的线型文件有<strong>acad.lin/acadiso.lin</strong>等，中望CAD对应的线型文件为<strong>zwcad.lin/zwcadiso.lin</strong>等。</li>
+    <li class="define_text_1" value="4">填充定义文件。在AutoCAD中安装自带的填充定义文件有<strong>acad.pat/acadiso.pat</strong>，中望CAD对应的天填充定义文件为<strong>zwcad.pat/zwcadiso.pat</strong>。</li>
+    <li class="define_text_1" value="5">CUI文件。在AutoCAD中默认的主cui文件为<strong>acad.cuix</strong>，中望CAD对应的默认主cui文件为<strong>zwcad.cuix</strong>。</li>
+    <li class="define_text_1" value="6">命令别名文件。在AutoCAD中的命令别名文件为<strong>acad.pgp</strong>，中望CAD对应的命令别名文件为<strong>zwcad.pgp</strong>。</li>
+    <li class="define_text_1" value="7">自动加载LISP文件。在AutoCAD中新建或者打开文档时会自动加载搜索路径中的<strong>acad.lsp</strong>文件，中望CAD对应的文件为<strong>zwcad.lsp</strong>。</li>
+    <li class="define_text_1" value="8">自动加载rx文件。在AutoCAD中启动软件时会自动加载搜索路径中的<strong>acad.rx</strong>文件中指定的arx文件，中望CAD对应的文件为<strong>zwcad.rx</strong>，启动时加载zwcad.rx中指定的zrx文件。</li>
+</ol> 
+
+<p class="define_head_2">文件路径和注册表<p>
+<ol class="command_ol">
+	<li class="define_text_1" value="1">AutoCAD的打印驱动、打印样式、线型定义、填充定义等软件配置文件在%AppData%\Autodesk\AutoCAD 2024\R24.3\chs目录，中望CAD对应的目录为%AppData%\ZWSOFT\ZWCAD\2026\zh-CN。</li>
+    <li class="define_text_1" value="2">AutoCAD中默认的模板文件目录为%LocalAppData%\Autodesk\AutoCAD 2024\R24.3\chs\Template，中望CAD对应的目录为%LocalAppData%\ZWSOFT\ZWCAD\2026\zh-CN\Template。</li>
+    <li class="define_text_1" value="3">AutoCAD中与当前系统用户相关的注册表信息记录在HKEY_CURRENT_USER\SOFTWARE\Autodesk\AutoCAD\R24.3\ACAD-7101:804下，操作系统全局的注册表信息记录在HKEY_LOCAL_MACHINE\SOFTWARE\Autodesk\AutoCAD\R24.3\ACAD-7101:804下；中望CAD中对应的注册表为HKEY_CURRENT_USER\SOFTWARE\ZWSOFT\ZWCAD\2025\zh-CN和HKEY_LOCAL_MACHINE\SOFTWARE\ZWSOFT\ZWCAD\2026\zh-CN。</li>
+</ol> 
+<div class="define_text_1">
+<table class="table-desc">
+<TR>
+<TH>注册表类型</TH>
+<TH>AutoCAD 2024</TH>
+<TH>ZWCAD 6</TH>
+</TR>
+<TR>
+<td class="table-item-odd">HKEY_CURRENT_USER</td>
+<td class="table-item-odd">HKEY_CURRENT_USER\SOFTWARE\Autodesk\AutoCAD\R24.3\ACAD-7101:804</td>
+<td class="table-item-odd">HKEY_CURRENT_USER\SOFTWARE\ZWSOFT\ZWCAD\2026\zh-CN</td>
+</TR>
+<TR>
+<td class="table-item-odd">HKEY_LOCAL_MACHINE</td>
+<td class="table-item-odd">HKEY_LOCAL_MACHINE\SOFTWARE\Autodesk\AutoCAD\R24.3\ACAD-7101:804</td>
+<td class="table-item-odd">HKEY_LOCAL_MACHINE\SOFTWARE\ZWSOFT\ZWCAD\2026\zh-CN</td>
+</TR>
+</TABLE>
+</div>
+
+<div class="define_text_2">
+<table class="note-table">
+<tr>
+<td class="note-table-img"><img class="note-img" src="../images/tips.gif"></td>
+<td class="note-table-title"><span class="note-title">提示</span></td>
+<td class="note-table-text"><span class="note-text">通常情况下，二次开发时会使用ROAMABLEROOTPREFIX系统变量来获取%AppData%下的配置文件根目录(如打印驱动配置文件)，使用LOCALROOTPREFIX系统变量来获取%LocalAppData%下的配置文件根目录(如模板文件)。<br>使用AcDbHostApplicationServices::getUserRegistryProductRootKey接口来获取HKEY_CURRENT_USER下的注册表项，使用AcDbHostApplicationServices::getMachineRegistryProductRootKey来获取HKEY_CURRENT_USER下的注册表项。</span></td>
+</tr>
+</table>
+</div>
+
+<div class="define_text_1">
+<table class="note-table">
+<tr>
+<td class="note-table-img"><IMG class=note-img src="../images/note.gif"></td>
+<td class="note-table-title"><span class="note-title">注意</span></td>
+<td class="note-table-text"><span class="note-text">中望CAD纯平台的配置文件名(路径)或者注册表中包含的公司和产品名分别为ZWSOFT和ZWCAD，然而基于中望CAD的OEM产品一般都会修改产品名，比如中望机械和中望建筑的产品名修改成了ZWCADA和ZWCADM，与之相关的一些文件名也随之改变，比如中望建筑中的别名文件为zwcada.pgp，自动加载的lisp文件为zwcada.lsp。</span></td>
+</tr>
+</table>
+</div>
+
+<p class="define_head_2">系统变量和命令<p>
+<p class="define_text_2">下表对中望CAD和AuotCAD中常用系统变量的差异进行了说明。<p>
+<div class="define_text_1">
+<table class="table-desc">
+<TR>
+<TH class="dev_body_text">变量名</TH>
+<TH>AutoCAD</TH>
+<TH>ZWCAD</TH>
+</TR>
+<TR>
+<td class="table-item-odd">ACADVER</td>
+<td class="table-item-odd">返回产品的版本号，如"24.3s (LMS Tech)"</td>
+<td class="table-item-odd">中望CAD中没有维护此系统变量，而是使用VERNUM维护产品版本，比如""26.00_2025.02.21(#17071-e130dec1767)_x64_T""，解析规则为：年度版本.小版本号.年.月.日(#哈希值)_系统位</td>
+</TR>
+</TABLE>
+</div>
+
+
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2025 ZWSOFT CO., LTD.(Guangzhou). All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

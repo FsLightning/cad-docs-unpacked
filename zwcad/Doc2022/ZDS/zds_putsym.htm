@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>zds_putsym</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<script language="javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2022 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">zds_putsym</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+<p class="cmd_line"><font color="#186DAD"><b>int zds_putsym (const char *symbol, struct zds_resbuf *value);</b></font></p>
+<p class="body_text">Set this LISP symbol to that value.</p>
+<hr algin="left" />
+<p class="body_text">This function finds or creates a LISP symbol and stores a value.</p>
+<p class="body_text">The argument symbol is the name of the LISP symbol in which you want to store a given value. When this symbol already exists, the value is simply stored there. If not, it is created, then the value is stored in it.</p>
+<p class="body_text">The argument value is the result buffer from which the value is obtained.</p>
+<p class="body_text">This function returns RTNORM or RTERROR with an error code.</p>
+<hr algin="left" />
+<p class="define_head_1">Example</p>
+<p class="define_text_1">struct zds_resbuf valuein;</p>
+<p class="define_text_1">valuein.restype=RTREAL;</p>
+<p class="define_text_1">valuein.resval.rreal=121.50;</p>
+<p class="define_text_1"><b>zds_putsym</b>("LISPsym",&valuein); // Put value in symbol "LISPsym</p>
+<hr algin="left" />
+<p class="define_head_1">Tell me about...</p>
+<ul class="command_ul">
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="Programming%20Overview%20of%20ZDS.htm">Programming Overview of ZDS (ZWCAD Development System)</a></p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_getsym.htm">zds_getsym</a></p>
+	</li>
+</ul>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2022 广州中望龙腾软件股份有限公司 All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

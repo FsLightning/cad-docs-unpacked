@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>zds_grvecs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<script language="javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2024 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">zds_grvecs</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+<p class="cmd_line"><font color="#186DAD"><b>int zds_grvecs (const struct zds_resbuf *vlist, zds_matrix mat);</b></font></p>
+<p class="body_text">Draw vectors on the screen.</p>
+<hr algin="left" />
+<p class="body_text">This function draws one or more vectors on the screen, unlike the 
+<a href="zds_grdraw.htm">zds_grdraw</a>, which draws a single vector. Vectors can be displayed in any of the standard colors and can be highlighted or displayed normally.</p>
+<p class="body_text">The argument vlist represents a list of result buffers that specify the vectors. The vectors are clipped as required. The vlist consists of point pairs and a color. RTPOINT specifies a pair of 2D x,y-coordinates; or RT3DPOINT specifies a pair of 3D x,y,z-coordinates.</p>
+<p class="body_text">RTSHORT specifies the color of the vector:</p>
+<table class="table-desc">
+	<tr>
+		<th>Color</th>
+		<th>Meaning</th>
+	</tr>
+	<tr>
+		<td>-1</td>
+		<td>Vector is highlighted.</td>
+	</tr>
+	<tr>
+		<td>0 -255</td>
+		<td>Standard colors.</td>
+	</tr>
+	<tr>
+		<td>256</td>
+		<td>Vector is drawn in XOR ink.</td>
+	</tr>
+	</table>
+<p class="body_text"><b>Note</b> When vectors are drawn in XOR ink and one XOR-colored vector overdraws another vector, it is drawn in a complimentary color.</p>
+<p class="body_text">When an XOR-color vector overdraws itself, it becomes invisible.</p>
+<p class="body_text">The argument mat is a 4 x 4 matrix that transforms the vectors before they are displayed.</p>
+<p class="body_text">This function returns RTERROR or RTNONE.</p>
+<hr algin="left" />
+<p class="define_head_1">Tell me about...</p>
+<ul class="command_ul">
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="Programming%20Overview%20of%20ZDS.htm">Programming Overview of ZDS (ZWCAD Development System)</a></p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_grdraw.htm">zds_grdraw</a></p>
+	</li>
+</ul>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2023 ZWSOFT CO., LTD.(Guangzhou). All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

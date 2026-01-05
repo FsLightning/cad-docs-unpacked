@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>zds_fill_image</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<script language="javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2022 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">zds_fill_image</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+<p class="cmd_line"><font color="#186DAD"><b>int zds_fill_image(int nULCornerX, int nULCornerY, int nWidthLess1, int nHeightLess1, int nColor);</b></font></p>
+<p class="body_text">Draws a filled rectangle in the currently active image.</p>
+<hr algin="left" />
+<p class="body_text">Draws a filled rectangle in the currently active image (opened by 
+<a href="zds_start_image.htm">zds_start_image</a>()). The nColor parameter is an ZWCAD color number or one of the logical color numbers described in the following table.</p>
+<p class="body_text">Symbolic names for the nColor attribute:</p>
+<table class="table-desc">
+	<tr>
+		<th>Color number</th>
+		<th>ADI mnemonic</th>
+		<th>Meaning</th>
+	</tr>
+	<tr>
+		<td>-2</td>
+		<td>BGLCOLOR</td>
+		<td>Current background of the ZWCAD graphics screen</td>
+	</tr>
+	<tr>
+		<td>-15</td>
+		<td>DBGLCOLOR</td>
+		<td>Current dialog box background color</td>
+	</tr>
+	<tr>
+		<td>-16</td>
+		<td>DFGLCOLOR</td>
+		<td>Current dialog box foreground color (for text)</td>
+	</tr>
+	<tr>
+		<td>-18</td>
+		<td>LINELCOLOR</td>
+		<td>Current dialog box line color</td>
+	</tr>
+</table>
+<p class="body_text">The first (upper-left) corner of the rectangle is located at (nULCornerX, nULCornerY), and the second (lower-right) corner is located at the relative distance (nWidthLess1, nHeightLess1) from the first (nWidthLess1and nHeightLess1must be positive values). The origin (0,0) is the upper-left corner of the image. You can obtain the coordinates of the lower-right corner by calling the dimension function 
+<a href="zds_dimensions_tile.htm">zds_dimensions_tile</a>().</p>
+<p class="body_text">The zds_fill_image function returns RTNORM if successful; otherwise, it returns an error code.</p>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2022 广州中望龙腾软件股份有限公司 All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

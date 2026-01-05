@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:等线;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"\@等线";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:等线;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"页眉 字符";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	layout-grid-mode:char;
+	border:none;
+	padding:0cm;
+	font-size:9.0pt;
+	font-family:等线;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"页脚 字符";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:9.0pt;
+	font-family:等线;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:21.0pt;
+	font-size:10.5pt;
+	font-family:等线;}
+span.a
+	{mso-style-name:"页眉 字符";
+	mso-style-link:页眉;}
+span.a0
+	{mso-style-name:"页脚 字符";
+	mso-style-link:页脚;}
+.MsoChpDefault
+	{font-family:等线;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+<title></title>
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2024 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">Updating from VS2010(VC10) to VS2017(VC15)</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<body>
+<div>
+<p class=MsoNormal style='margin-left:20.9pt;text-indent:-20.9pt'><a
+name="_Toc50715765"></a><a name="_Toc398794580"></a><a name="_Toc345427638"></a><a
+name="_Toc345426016"></a><a name="_Toc345425881"></a><a name="_Toc317586951"></a><a
+name="_Toc317586855"></a><span lang=EN-US
+style='font-size:12.0pt;font-family:Wingdings'>&Oslash;<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><b><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>
+Trouble shooting</span></b></p>
+
+<p class=MsoNormal style='margin-left:20.9pt;text-indent:-20.9pt'><span lang=EN-US style='font-size:12.0pt;font-family:Wingdings;
+color:black'>l<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><b><i><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>Updating 
+from VS2010(VC10) to VS2017(VC15)</span></i></b></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt'><b><span lang=EN-US style='font-size:12.0pt;font-family:
+"Calibri",sans-serif;color:black'>a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>
+Cannot be used before initialization</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:24.0pt'><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>
+1&gt;d:\8.work\1.code\zwcada_branchs\archzw\swr_archcore\exportfile.cpp(1700): 
+error C3861: “ptr_fun”: The identifier could not be found.</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:24.0pt'><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>
+1&gt;d:\8.work\1.code\zwcada_branchs\archzw\swr_archcore\exportfile.cpp(1700): 
+error C3861: “bind1st”: The identifier could not be found.</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:24.0pt'><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>
+1&gt;d:\8.work\1.code\zwcada_branchs\archzw\swr_archcore\exportfile.cpp(1701): 
+error C3536: “itFloor”: Cannot be used before initialization.</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm'><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>Please add 
+the header file &lt;functional&gt; to the source file</span><span
+style='font-size:12.0pt'>。</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:black'>
+b)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>Execution 
+to the <span style='color:red'>_tfindfirst(), _findclose(), _tfindnext()</span>
+functions results in an error: 0xC0000005, the program crashes. For example, the 
+following code</span><span style='font-size:12.0pt'>：</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>long hand;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></i></b><b><i><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:red'>
+//the type of hand change from long to long long</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>hand = _tfindfirst((TCHAR 
+*)sDbfPath, &amp;fb);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>if(hand != -1L)</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>{ </span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+bFind = TRUE; </span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:24.0pt;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>_findclose(hand); </span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>}</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt'>
+You should change the type of hand from long to long long.</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:black'>
+c)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>Error</span><span
+style='font-size:12.0pt'>：</span><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>MFC does not support _WIN32_WINNT less than 
+_WIN32_WINNT_WINXP. For example, the following code</span><span
+style='font-size:12.0pt'>：</span><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>#ifndef <b><i><span style='color:#0070C0'>
+_WIN32_WINNT</span></i></b></span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>#define _WIN32_WINNT 
+0x0500</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>#endif</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>You should mask the code here as follows:</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>#if _MSC_VER &lt; 1910</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>#ifndef _WIN32_WINNT</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>#define _WIN32_WINNT 
+0x0500</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>#endif</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>#endif</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:black'>
+d)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>
+Error:unresolved external symbol _sprintf</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>You should do the following:</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:36.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>
+Open project properties: Linker -&gt; Input -&gt; Additional Dependencies, add the 
+library:<span style='color:red'> legacy_stdio_definitions.lib</span></span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:36.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>2)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>
+Add the following compilation preprocessing to the source file which reported 
+the error:</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:18.0pt;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>#pragma comment (lib, 
+“legacy_stdio_definitions.lib”)</span></i></b></p>
+
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2023 ZWSOFT CO., LTD.(Guangzhou). All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

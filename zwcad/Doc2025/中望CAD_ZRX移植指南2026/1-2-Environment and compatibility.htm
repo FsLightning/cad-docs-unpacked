@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>兼容性和环境说明</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+<div class="hear_text">中望CAD 2026 ZRX移植指南</div>
+</div>
+</div>
+</div>
+
+<div class="clr"></div>
+<div class="Tophead"><span class="Tophead_text">环境要求</span></div> 
+<div class="clr"></div>
+
+<div id="content" class="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+
+<p class="define_head_1">总览</p>
+<p class="define_text_1">中望CAD提供ZRXSDK支持开发者在中望平台上进行二次开发，开发者可以使用ZRXSDK中的接口来实现各种功能。开发者需要先配置开发环境，然后使用ZRXSDK中的接口编写程序，然后编译生成ZRX应用程序，最后在中望CAD中加载运行。一般情况下，中望CAD连续3~4个年度版本内不会修改ZRXSDK接口，使用旧版本SDK编译的ZRX可以新版本上加载，所以在二进制兼容版本内开发者无需修改源码和编译即可进行中望平台年度版本的升级。</p>
+<table class="table-desc">
+<TR>
+<TH>ZRXSDK版本(二进制兼容)</TH>
+<TH>开发环境</TH>
+<TH>平台工具集</TH>
+<TH>.NET Framework版本</TH>
+<TH>32位支持</TH>
+<TH>对应ObjectARX版本</TH>
+</TR>
+<TR>
+<td class="table-item-odd">ZRXSDK2017~ZRXSDK2020</td>
+<td class="table-item-odd">Microsoft Visual Studio 2010</td>
+<td class="table-item-odd">v140</td>
+<td class="table-item-odd">.NET Framework 4.0</td>
+<td class="table-item-odd">是</td>
+<td class="table-item-odd">ObjectARX2008</td>
+</TR>
+<TR>
+<td class="table-item-odd">ZRXSDK2021~ZRXSDK2024</td>
+<td class="table-item-odd">Microsoft Visual Studio 2017 15.9及以上</td>
+<td class="table-item-odd">v141</td>
+<td class="table-item-odd">.NET Framework 4.7</td>
+<td class="table-item-odd">是</td>
+<td class="table-item-odd">ObjectARX2019</td>
+</TR>
+<TR>
+<td class="table-item-odd">ZRXSDK2025~</td>
+<td class="table-item-odd">Microsoft Visual Studio 2017 15.9及以上</td>
+<td class="table-item-odd">v141</td>
+<td class="table-item-odd">.NET Framework 4.7</td>
+<td class="table-item-odd">否</td>
+<td class="table-item-odd">ObjectARX2024</td>
+</TR>
+</TABLE>
+
+<hr algin="left" >
+<p class="define_head_1">二进制兼容性</p>
+<p class="define_text_1">中望2021~中望2024版本的二进制相互兼容，可以基于ZRXSDK2021(22/23/24)进行二次开发，接口和ObjectARX2019兼容。中望2025版本升级了ZRXSDK，接口和ObjectARX2024兼容，需要基于ZRXSDK2025重新编译ZRX文件，然后才能在中望2025上加载使用。中望2026版本的接口和中望2025兼容，中望2025编译的ZRX无需重新编译，可以直接在中望2026上加载使用。</p>
+
+<hr algin="left" >
+<p class="define_head_1">开发环境</p>
+<p class="define_text_1">推荐使用Microsoft Visual Studio 2017(15.9及以上版本)进行二次开发，Visual Studio平台工具集使用v141，.NET Framework使用4.7。</p>
+
+<hr algin="left" >
+<p class="define_head_1">操作系统</p>
+<p class="define_text_1">推荐使用Windows 10 (1703)及以上版本，具体见<A href="https://learn.microsoft.com/en-us/dotnet/framework/get-started/system-requirements" target="_blank">.NET Framework 4.7系统支持</A>。</p>
+
+<hr algin="left" >
+<p class="define_head_1">32位支持</p>
+<p class="define_text_1">中望2025版本开始不再支持32位。</p>
+
+<hr algin="left" >
+<p class="define_head_1">ZRXSDK目录结构</p>
+<p class="define_text_1">ZRXSDK中的arxport文件夹模拟了ARXSDK的文件结构，便于开发者从ARX移植到ZRX。当然，您也可以直接包含和引用ZRXSDK的inc和lib目录进行开发。</p>
+<p class="define_text_0"><img class="pics" src="../pics/zrxsdk_structure.png"></p>
+
+<p>
+<table class="note-table">
+<tr>
+<td class="note-table-img"><IMG class=note-img src="../images/note.gif"></td>
+<td class="note-table-title"><span class="note-title">注意</span></td>
+<td class="note-table-text"><span class="note-text">当前ZRX接口和ObjectARX2024兼容，如果您是从ObjectARX低版本移植到中望2026，那么建议先将接口升级到ObjectARX2024，然后再移植到中望2026。</span></td>
+</tr>
+</table>
+</p>
+
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2025 ZWSOFT CO., LTD.(Guangzhou). All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

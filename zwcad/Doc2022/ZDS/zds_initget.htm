@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>zds_initget</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<script language="javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2022 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">zds_initget</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+<p class="cmd_line"><font color="#186DAD"><b>int zds_initget (int accept, const char *keys);</b></font></p>
+<p class="body_text">Accept only input fitting these criteria.</p>
+<hr algin="left" />
+<p class="body_text">This function defines what input is acceptable for the command immediately following zds_initget. When keywords are allowed, use 
+<a href="zds_getinput.htm">zds_getinput</a> after this function to get the keyword that the user entered.</p>
+<p class="body_text">The argument accept determines the type of input that will be accepted from the user with the next function. It is the sum of the bit values selected from the list below:</p>
+<table class="table-desc">
+	<tr>
+		<th>Accept</th>
+		<td></td>
+		<th>Meaning</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>RSG_NONULL</td>
+		<td>Does not accept a carriage return from the user.</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>RSG_NOZERO</td>
+		<td>Accepts only non-zero input from the user.</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>RSG_NONEG</td>
+		<td>Accepts only non-negative numbers, including zero.</td>
+	</tr>
+	<tr>
+		<td>8</td>
+		<td>RSG_NOLIM</td>
+		<td>Accepts input outside of the limits of the drawing. This has precedence over the LIMCHECK system variable.</td>
+	</tr>
+	<tr>
+		<td>16</td>
+		<td>...</td>
+		<td>Not used.</td>
+	</tr>
+	<tr>
+		<td>32</td>
+		<td>RSG_DASH</td>
+		<td>Uses dashed lines for selection tools (boxes and rubberband lines).</td>
+	</tr>
+	<tr>
+		<td>64</td>
+		<td>RSG_2D</td>
+		<td>Accepts, but does not use, the z-value for points in the 
+		<a href="zds_getdist.htm">zds_getdist</a> function.</td>
+	</tr>
+	<tr>
+		<td>128</td>
+		<td>RSG_OTHER</td>
+		<td>Accepts anything the user enters, and returns ZDS_RTKWORD.</td>
+	</tr>
+</table>
+<p class="body_text">For example, if you want to limit the user's input to only positive numbers (non-negative and non-zero), and draw a rubber-band line with dashes, you add 4 + 2 + 32 to get a value of 38 for the accept variable.</p>
+<p class="body_text">A more verbose-but often clearer way-of using accept is to write an expression using the RSG_XXX words for each of the bits you wish to set. The same example as above written in this way is:</p>
+<p class="prompt">(RSG_NONEG + RSG_NONULL + RSG_DASH)</p>
+<p class="body_text">Once the bit code is set, you use string to determine the values that the user is limited to entering in response to the prompt displayed by the following function. This string is a list of keywords to be accepted by the next command. In essence, initget lets you define keywords. If keywords are not to be used, argument keys should be null or an empty string (""). The function always returns nil.</p>
+<p class="body_text">When defining your list of keywords, separate each keyword with a space. Show allowable abbreviations by capitalizing the required letter(s). When the entire word is in capital letters, the user is required to enter the entire word. Keywords may contain letters, numbers, and dashes. Here is an example of a list of keywords:</p>
+<p class="prompt">"One Two Three Four"</p>
+<p class="body_text">Given this, the user can type "three" or just "th" for three.</p>
+<p class="body_text">An alternative method of listing keywords is to write each word in all-capital letters, followed by a comma and the abbreviation for the word, as in the following example:</p>
+<p class="prompt">"ONE,O TWO,T THREE,TH FOUR,F"</p>
+<p class="body_text">This is usually used with (human) languages that do not use upper- and lower-case letters.</p>
+<p class="prompt">"~A B C _F _G ~_H"</p>
+<p class="body_text">The ~ prefix causes the keyword that follows to not be displayed in the popup menu. Use ~~ if you need to have ~ appear as a keyword.</p>
+<p class="body_text">The first underscore prefix indicates that the remaining keywords are globalized forms of the preceding keywords. The first keyword ("A" in this example) will match the first globalized keyword ("F" in this example), the second keyword will match the next globalized keyword ("B" will match "G" in the example), and so on. The user can enter either the localized or globalized keyword; the globalized keyword will be returned in either case. Only the first globalized keyword is required to have the underscore prefix.</p>
+<p class="body_text"><b>Note</b> The following combinations of functions, keywords, and accept bits are allowed:</p>
+<table class="table-desc">
+	<tr>
+		<th>Function</th>
+		<th>Keywords</th>
+		<th>1</th>
+		<th>2</th>
+		<th>4</th>
+		<th>8</th>
+		<th>32</th>
+		<th>64</th>
+		<th>128</th>
+	</tr>
+	<tr>
+		<td>zds_draggen</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<td>zds_entsel</td>
+		<td>Yes</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>zds_getangle</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td></td>
+		<td></td>
+		<td>Yes</td>
+		<td></td>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<td>zds_getcorner</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td></td>
+		<td></td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td></td>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<td>zds_getdist</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td></td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<td>zds_getint</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<td>zds_getkword</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<td>zds_getorient</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td></td>
+		<td></td>
+		<td>Yes</td>
+		<td></td>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<td>zds_getpoint</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td></td>
+		<td></td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td></td>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<td>zds_getreal</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<td>zds_getstring</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>zds_nentsel</td>
+		<td>Yes</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>zds_nentselp</td>
+		<td>Yes</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<p class="body_text">This function returns RTNORM, RTKWORD, or RTERROR.</p>
+<hr algin="left" />
+<p class="define_head_1">Example</p>
+<p class="define_text_1">char string1[512];</p>
+<p class="define_text_1"><b>zds_initget</b>(0,"Cat Dog Horse Bird");</p>
+<p class="define_text_1">zds_getkword("\nChoose one: Cat/Dog/Horse/Bird ",string1);</p>
+<p class="define_text_1">zds_printf("\nYour favorite animal is a %s. ",string1);</p>
+<hr algin="left" />
+<p class="define_head_1">Tell me about...</p>
+<ul class="command_ul">
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="Programming%20Overview%20of%20ZDS.htm">Programming Overview of ZDS (ZWCAD Development System)</a></p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_draggen.htm">zds_draggen</a></p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_entsel.htm">zds_entsel</a></p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_getinput.htm">zds_getinput</a></p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_nentsel.htm">zds_nentsel</a></p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_nentselp.htm">zds_nentselp</a></p>
+	</li>
+</ul>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2022 广州中望龙腾软件股份有限公司 All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

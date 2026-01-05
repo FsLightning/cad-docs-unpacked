@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>从MBCS字符集到Unicode字符集</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+
+
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">中望CAD 2026 ZRX移植指南</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">从MBCS字符集到Unicode字符集</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+
+<p class="dev_body_text">前面的移植步骤中提到中望CAD中基于Unicode字符集处理字符串，推荐将项目的字符集设置为Unicode字符集，本文将详细介绍如何从MBCS字符集转换成Unicode字符集。</p>
+
+<ol class="command_ol">
+<li class="dev_body_text" value="1">参考移植步骤中的<a href="2-3-Set%20the%20Unicode%20character%20set.htm">第3步</a>，修改工程配置，将MBCS字符集修改为Unicode字符集。
+</li>
+<li class="dev_body_text" value="2">修改字符串类型，将char修改为TCHAR或ACHAR或wchar_t，字符串常量使用_T("")或ACRX_T("")或L""包含。
+<pre class="code_sample_inLine">
+// before(MBCS)
+char buffer[MAX_PATH] = {0};
+const char* prompt = "Hello ZWCAD!";
+GetModuleFileNameA(NULL, buffer, MAX_PATH); 
+acutPrintf("%s, %s\n", prompt, buffer);
+
+// after(Unicode)
+ACHAR buffer[MAX_PATH] = {0};
+const ACHAR* prompt = _T("Hello ZWCAD!");
+GetModuleFileNameW(NULL, buffer, MAX_PATH);  // GetModuleFileName as well
+acutPrintf(_T("%s, %s\n"), prompt, buffer); 
+</pre>
+</li>
+<li class="dev_body_text" value="3">将ANSI API替换为Unicode API
+<ul class="list_inLine">
+<li>Windows API
+    <p>CreateFileA → CreateFileW(CreateFile)</p>
+    <p>MessageBoxA → MessageBoxW(MessageBox)</p>
+    <p>...</p>
+    <p>更多函数请在MSDN查询<a href="https://learn.microsoft.com/en-us/windows/win32/api/winuser/" target="_blank">Windows API Unicode版本</a></p>
+</li>
+<li>C/C++标准库函数</li>
+<table class="simple_table_desc">
+<tr>
+<th>ANSI(char)</th>
+<th>Unicode(wchar_t)</th>
+<th>兼容(TCHAR)</th>
+</tr>
+<tr>
+<td>atoi</td>
+<td>_wtoi</td>
+<td>_ttoi</td>
+</tr>
+<tr>
+<td>fprintf</td>
+<td>fwprintf</td>
+<td>_ftprintf</td>
+</tr>
+<tr>
+<td>isalpha</td>
+<td>iswalpha</td>
+<td>_istalpha</td>
+</tr>
+<tr>
+<td>_itoa</td>
+<td>_itow</td>
+<td>_itot</td>
+</tr>
+<tr>
+<td>_itoa_s</td>
+<td>_itow_s</td>
+<td>_itot_s</td>
+</tr>
+<tr>
+<td>strcpy</td>
+<td>wcscpy</td>
+<td>_tcscpy</td>
+</tr>
+<tr>
+<td>strncpy</td>
+<td>wcsncpy</td>
+<td>_tcsncpy</td>
+</tr>
+<tr>
+<td>strcmp</td>
+<td>wcscmp</td>
+<td>_tcscmp</td>
+</tr>
+<tr>
+<td>strncmp</td>
+<td>wcsncmp</td>
+<td>_tcsncmp</td>
+</tr>
+<tr>
+<td>strlen</td>
+<td>wcslen</td>
+<td>_tcslen</td>
+</tr>
+<tr>
+<td>strcat</td>
+<td>wcscat</td>
+<td>_tcscat</td>
+</tr>
+<tr>
+<td>strchr</td>
+<td>wcschr</td>
+<td>_tcschr</td>
+</tr>
+<tr>
+<td>strrchr</td>
+<td>wcsrchr</td>
+<td>_tcsrchr</td>
+</tr>
+<tr>
+<td>strtok</td>
+<td>wcstok</td>
+<td>_tcstok</td>
+</tr>
+<tr>
+<td>strstr</td>
+<td>wcsstr</td>
+<td>_tcsstr</td>
+</tr>
+<tr>
+<td>sprintf</td>
+<td>swprintf</td>
+<td>_stprintf</td>
+</tr>
+<td>vsprintf</td>
+<td>_vswprintf</td>
+<td>_vstprintf</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</table>
+<p>更多函数请在MSDN查询<a href="https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/crt-alphabetical-function-reference?view=msvc-150" target="_blank">C运行时库函数</a>。</p>
+<li>外部依赖库函数</li>
+<p>请确认使用到的外部依赖库函数也是Unicode版本，否则可能会出现链接错误问题(在lib库中找不着Unicode版本的函数而链接失败)。</p>
+</ul>
+</li>
+<li class="dev_body_text" value="4">如果工程中必须要混合使用窄字符和宽字符，请注意进行字符转换。
+<pre class="code_sample_inLine">
+// MBCS to Unicode
+std::wstring ConvertToWide(const std::string& str)
+{
+	int size_needed = MultiByteToWideChar(CP_ACP, 0, str.c_str(), -1, NULL, 0);
+	std::wstring wstr(size_needed, 0);
+	int retValue = MultiByteToWideChar(CP_ACP, 0, str.c_str(), -1, &wstr[0], size_needed);  // returns 0 if it does not succeed
+	return wstr;
+}
+
+// Unicode to MBCS
+std::string ConvertToMultiByte(const std::wstring& wstr)
+{
+	int size_needed = WideCharToMultiByte(CP_ACP, 0, wstr.c_str(), -1, NULL, 0, NULL, NULL);
+	std::string str(size_needed, 0);
+	int retValue = WideCharToMultiByte(CP_ACP, 0, wstr.c_str(), -1, &str[0], size_needed, NULL, NULL); // returns 0 if it does not succeed
+	return str;
+}
+</pre>    
+</li>
+</ol> 
+
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2025 ZWSOFT CO., LTD.(Guangzhou). All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

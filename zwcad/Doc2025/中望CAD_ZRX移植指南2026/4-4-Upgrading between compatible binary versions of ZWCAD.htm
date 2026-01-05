@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>二进制兼容版本移植升级</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+
+
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">中望CAD 2026 ZRX移植指南</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">二进制兼容版本移植升级</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+
+<p class="dev_body_text">二进制兼容版本说明：ZRXSDK接口原型和接口功能在多个版本中保持不变，基于二进制兼容版本的ZRXSDK编译的二进制文件可以另一个二进制兼容版本上直接加载使用，无需再重新编译。</p>
+<p class="dev_body_text">二次开发应用程序移植到中望CAD通常会经过下面的流程，如果在二进制兼容版本内进行移植升级，一般仅需对年度版本相关的配置进行修改然后再进行打包。</p>
+<ol class="command_ol">
+<li style="color: rgb(180, 180, 180);">准备开发环境</li>
+<li style="color: rgb(180, 180, 180);">迁移源码工程</li>
+<li style="color: rgb(180, 180, 180);">编译生成二进制文件</li>
+<li>修改应用程序配置</li>
+<li>打包应用程序</li>
+<li style="color: rgb(140, 140, 140);">测试修改应用程序问题</li>
+<li>产品发布</li>
+</ol>
+<hr algin="left" >
+<p class="define_head_1">升级年度版本配置修改</p>
+<p class="define_text_1">中望CAD不同版本配置信息上的主要差异(以中望CAD2025和中望CAD2026为例)</p>
+<table class="table-desc">
+<tr>
+<th>配置信息</th>
+<th>中望CAD 2025</th>
+<th>中望CAD 2026</th>
+</tr>
+<tr>
+<td>用户配置注册表</td>
+<td>HKEY_CURRENT_USER\SOFTWARE\ZWSOFT\ZWCAD\2025\zh-CN\Profiles</td>
+<td>HKEY_CURRENT_USER\SOFTWARE\ZWSOFT\ZWCAD\<span style="color: red;">2026</span>\zh-CN\Profiles</td>
+</tr>
+<tr>
+<td>启动配置注册表</td>
+<td>HKEY_LOCAL_MACHINE\SOFTWARE\ZWSOFT\ZWCAD\2025\zh-CN\Applications</td>
+<td>HKEY_LOCAL_MACHINE\SOFTWARE\ZWSOFT\ZWCAD\<span style="color: red;">2026</span>\zh-CN\Applications</td>
+</tr>
+<tr>
+<td>中望CAD安装信息</td>
+<td>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{82434F95-A001-2052-A101-7E20F67BFF3C}</td>
+<td>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\<span style="color: red;">{CBC94276-A001-2052-A101-255782FFDEE0}</span></td>
+</tr>
+<tr>
+<td>中望CAD配置文件路径</td>
+<td>%AppData%\ZWSOFT\ZWCAD\2025\zh-CN</td>
+<td>%AppData%\ZWSOFT\ZWCAD\<span style="color: red;">2026</span>\zh-CN</td>
+</tr>
+</table>
+
+<p class="define_text_1">基于上述不同年度版本上的差异，需要对二次开发应用程序的配置信息进行通过修改：</p>
+<ul class="command_ol">
+<li class="dev_body_text">如果源码中存在上述平台版本、注册表、路径的硬编码字符串，需要适配修改然后重新编译文件。建议不要使用硬编码字符串来指定配置信息，而是使用中望CAD提供的接口来指定，便于快速完成平台年度版本相关的配置，具体见<a href="3-2-The%20API%20and%20Features%20differences.htm">平台功能差异部分的提示</a>。</li>
+<li class="dev_body_text">如果二次开发应用程序指定了自定义配置、界面文件、支持文件搜索路径等用户配置，需要适配修改对应注册表的年度版本，如上表中的"用户配置注册表"。</li>
+<li class="dev_body_text">如果二次开发应用程序通过注册表配置实现自动加载，需要适配修改对应注册表的年度版本，如上表中的"启动配置注册表"。</li>
+<li class="dev_body_text">如果二次开发应用程序将自定义的文件放置到了中望的配置文件路径下，需要适配修改对应的年度版本，如上表中的"中望CAD配置文件路径"。</li>
+<li class="dev_body_text">如果二次开发应用程序的启动程序通过Windows注册表来确定中望CAD的安装路径，需要添加对高版本的支持，如上表中的"中望CAD安装信息"。</li>
+<li class="dev_body_text">完成上述年度信息相关的配置后，制作二次开发产品安装包。</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2025 ZWSOFT CO., LTD.(Guangzhou). All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Programming Overview of ZDS</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<script language="javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2022 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">Programming Overview of ZDS (ZWCAD Development System)</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+<p class="body_text">ZDS is an acronym for ZWCAD Development System, a C/C++ language interface compatible with the ADS&reg; (AutoCAD&reg; Development System) interface found in other CAD systems. ZDS provides hooks into ZWCAD&reg; , allowing you to create custom applications.</p>
+<p class="body_text">ZDS communicates with the user and ZWCAD via LISP (akin to the way that ADS works with AutoLISP&reg; and other CAD systems). However, ZDS greatly augments the capabilities found in LISP with a much more powerful command base that can also access the operating system. This allows you to create even more sophisticated custom solutions. And, because ZDS applications are compiled, they are typically faster than LISP applications.</p>
+<hr algin="left" />
+<p class="define_head_1">Prefixes to ZDS Functions</p>
+<p class="define_text_1">If you're familiar with ADS, note that one primary difference between ADS and ZDS is that most ZDS functions have an zds_ prefix (except for special dialog-related ZDS functions, which have the zds_ prefix), whereas ADS functions have a variety of prefixes, such as ads_, acad_, and acrx_.</p>
+<hr algin="left" />
+<p class="define_head_1">Functions Unique to ZDS</p>
+<p class="define_text_1">ZDS offers several additional capabilities beyond those available in ADS. </p>
+<hr algin="left" />
+<p class="define_head_1">ZDS Functions</p>
+<table class="table-desc">
+	<tr>
+		<th>Function</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><a href="zds_name_clear.htm">zds_name_clear</a></td>
+		<td>Clears the entity name or selection set.</td>
+	</tr>
+	<tr>
+		<td><a href="zds_name_equal.htm">zds_name_equal</a></td>
+		<td>Checks if two entity names or selection sets are equal.</td>
+	</tr>
+	<tr>
+		<td><a href="zds_name_nil.htm">zds_name_nil</a></td>
+		<td>Checks if the entity name or selection set has been cleared.</td>
+	</tr>
+	<tr>
+		<td><a href="zds_name_set.htm">zds_name_set</a></td>
+		<td>Copies one entity name or selection set to another.</td>
+	</tr>
+	<tr>
+		<td><a href="zds_point_set.htm">zds_point_set</a></td>
+		<td>Copies a point from one variable to another.</td>
+	</tr>
+<!--	<tr>
+		<td><a href="zds_progresspercent.htm">zds_progresspercent</a></td>
+		<td>Displays the percentage done in a progress bar.</td>
+	</tr>
+	<tr>
+		<td><a href="zds_progresspercent.htm">zds_progressstart</a></td>
+		<td>Starts the progress bar.</td>
+	</tr>
+	<tr>
+		<td><a href="zds_progressstop.htm">zds_progressstop</a></td>
+		<td>Ends the progress bar.</td>
+	</tr>
+	<tr>
+		<td><a href="zds_readaliasfile.htm">zds_readaliasfile</a></td>
+		<td>Loads the PGP file into ZWCAD.</td>
+	</tr>
+	<tr>
+		<td><a href="zds_sendmessage.htm">zds_sendmessage</a></td>
+		<td>Sends a message to the ZWCAD command line.</td>
+	</tr>
+	<tr>
+		<td><a href="zds_swapscreen.htm">zds_swapscreen</a></td>
+		<td>Flips the off-screen device context to the display.</td>
+	</tr>-->
+</table>
+<hr algin="left" />
+<p class="define_head_1">ADS Functions Not Supported by ZDS</p>
+<p class="define_text_1">The following ADS functions are not supported by ZDS: ads_arxload, ads_arxloaded, ads_arxunload, all ads_dict-related functions, ads__msize, ads_namedobjdict, ads_regappx, ads_ssgetx, ads_ssnamex, ads_tablet, ads_xstrcase, ads_xstrsave, ads_ssGetKwordCallbackPtr, ads_ssGetOtherCallbackPtr, adsw_acadMainWnd, and adsw_acadDocWnd.</p>
+<hr algin="left" />
+<p class="define_head_1">Selection Modes</p>
+<p class="define_text_1">ZWCAD supports the following selection modes:</p>
+<p class="define_text_1"><b>ZWCAD selection modes</b></p>
+<table class="table-desc">
+	<tr>
+		<th>Mode</th>
+		<th>Meaning</th>
+	</tr>
+	<tr>
+		<td>NULL</td>
+		<td>(none) Single pick point</td>
+	</tr>
+	<tr>
+		<td>"B"</td>
+		<td>Box</td>
+	</tr>
+	<tr>
+		<td>"C"</td>
+		<td>Crossing</td>
+	</tr>
+	<tr>
+		<td>"CC"</td>
+		<td>Crossing Circle</td>
+	</tr>
+	<tr>
+		<td>"CP"</td>
+		<td>Crossing Polygon</td>
+	</tr>
+	<tr>
+		<td>"F"</td>
+		<td>Fence</td>
+	</tr>
+	<tr>
+		<td>"I"</td>
+		<td>Implied</td>
+	</tr>
+	<tr>
+		<td>"L"</td>
+		<td>Last</td>
+	</tr>
+	<tr>
+		<td>"O"</td>
+		<td>Outside</td>
+	</tr>
+	<tr>
+		<td>"OC"</td>
+		<td>Outside Circle</td>
+	</tr>
+	<tr>
+		<td>"OP"</td>
+		<td>Outside Polygon</td>
+	</tr>
+	<tr>
+		<td>"P"</td>
+		<td>Previous</td>
+	</tr>
+	<tr>
+		<td>"PO"</td>
+		<td>Point</td>
+	</tr>
+	<tr>
+		<td>"W"</td>
+		<td>Window</td>
+	</tr>
+	<tr>
+		<td>"WC"</td>
+		<td>Window Circle</td>
+	</tr>
+	<tr>
+		<td>"WP"</td>
+		<td>Window Polygon</td>
+	</tr>
+	<tr>
+		<td>"X"</td>
+		<td>All</td>
+	</tr>
+</table>
+<hr algin="left" />
+<p class="define_head_1">Selection Modes Not Supported by ZWCAD</p>
+<p class="define_text_1">ZWCAD does not support the following selection modes found in other CAD systems: "G", ":$", ":?", ":D", ":E", ":K", ":N", ":S", ".", "#", "A", and "M" nor the Boolean operators &lt;NOT&gt;, &lt;OR&gt;, and &lt;AND&gt;.</p>
+<hr algin="left" />
+<p class="define_head_1">ZDS Return Codes</p>
+<p class="define_text_1">ZDS functions return these request type codes:</p>
+<table class="table-desc">
+	<tr>
+		<th>Request</th>
+		<th>Code</th>
+		<th>Meaning</th>
+	</tr>
+	<tr>
+		<td>RSRSLT</td>
+		<td>1</td>
+		<td>Result is returned.</td>
+	</tr>
+	<tr>
+		<td>RSERR</td>
+		<td>3</td>
+		<td>Error in evaluation; no result is returned.</td>
+	</tr>
+	<tr>
+		<td>RQSAVE</td>
+		<td>14</td>
+		<td>ZWCAD is saving the drawing.</td>
+	</tr>
+	<tr>
+		<td>RQEND</td>
+		<td>15</td>
+		<td>ZWCAD is exiting.</td>
+	</tr>
+	<tr>
+		<td>RQQUIT</td>
+		<td>16</td>
+		<td>ZWCAD is quitting.</td>
+	</tr>
+	<tr>
+		<td>RQCFG</td>
+		<td>22</td>
+		<td>ZWCAD is returning from the Config command.</td>
+	</tr>
+	<tr>
+		<td>RQXLOAD</td>
+		<td>100</td>
+		<td>Load external functions.</td>
+	</tr>
+	<tr>
+		<td>RQXUNLD</td>
+		<td>101</td>
+		<td>Unload the application.</td>
+	</tr>
+	<tr>
+		<td>RQSUBR</td>
+		<td>102</td>
+		<td>External subroutine request.</td>
+	</tr>
+	<tr>
+		<td>RQHUP</td>
+		<td>105</td>
+		<td>ZWCAD is disconnected from the application.</td>
+	</tr>
+	<tr>
+		<td>RQXHELP</td>
+		<td>118</td>
+		<td>Define help for the function.</td>
+	</tr>
+	<tr>
+		<td>RTERROR</td>
+		<td>-5001</td>
+		<td>An error has occurred.</td>
+	</tr>
+	<tr>
+		<td>RTCAN</td>
+		<td>-5002</td>
+		<td>User canceled the command by pressing Esc.</td>
+	</tr>
+	<tr>
+		<td>RTREJ</td>
+		<td>-5003</td>
+		<td>ZWCAD rejected the request, probably due to invalid format.</td>
+	</tr>
+	<tr>
+		<td>RTFAIL</td>
+		<td>-5004</td>
+		<td>Link failure between ZDS and ZWCAD.</td>
+	</tr>
+	<tr>
+		<td>RTKWORD</td>
+		<td>-5005</td>
+		<td>Keyword returned from getxxx routine.</td>
+	</tr>
+	<tr>
+		<td>RTNORM</td>
+		<td>5100</td>
+		<td>Request succeeded.</td>
+	</tr>
+</table>
+<hr algin="left" />
+<p class="define_head_1">Result buffer codes</p>
+<table class="table-desc">
+	<tr>
+		<th>Request</th>
+		<th>Code</th>
+		<th>Meaning</th>
+	</tr>
+	<tr>
+		<td>RTNONE</td>
+		<td>5000</td>
+		<td>No result.</td>
+	</tr>
+	<tr>
+		<td>RTREAL</td>
+		<td>5001</td>
+		<td>Real number.</td>
+	</tr>
+	<tr>
+		<td>RTPOINT</td>
+		<td>5002</td>
+		<td>2-D point (x,y-coordinate).</td>
+	</tr>
+	<tr>
+		<td>RTSHORT</td>
+		<td>5003</td>
+		<td>Short integer.</td>
+	</tr>
+	<tr>
+		<td>RTANG</td>
+		<td>5004</td>
+		<td>Angle.</td>
+	</tr>
+	<tr>
+		<td>RTSTR</td>
+		<td>5005</td>
+		<td>String.</td>
+	</tr>
+	<tr>
+		<td>RTENAME</td>
+		<td>5006</td>
+		<td>Entity name.</td>
+	</tr>
+	<tr>
+		<td>RTPICKS</td>
+		<td>5007</td>
+		<td>Pick set.</td>
+	</tr>
+	<tr>
+		<td>RTORINT</td>
+		<td>5008</td>
+		<td>Orientation.</td>
+	</tr>
+	<tr>
+		<td>RT3DPOINT</td>
+		<td>5009</td>
+		<td>3-D point (x,y,z coordinate).</td>
+	</tr>
+	<tr>
+		<td>RTLONG</td>
+		<td>5010</td>
+		<td>Long integer.</td>
+	</tr>
+	<tr>
+		<td>RTVOID</td>
+		<td>5014</td>
+		<td>Blank symbol.</td>
+	</tr>
+	<tr>
+		<td>RTLB</td>
+		<td>5016</td>
+		<td>Begin list.</td>
+	</tr>
+	<tr>
+		<td>RTLE</td>
+		<td>5017</td>
+		<td>End of list.</td>
+	</tr>
+	<tr>
+		<td>RTDOTE</td>
+		<td>5018</td>
+		<td>Dotted pair.</td>
+	</tr>
+	<tr>
+		<td>RTDXF0</td>
+		<td>5019</td>
+		<td>Nil</td>
+	</tr>
+	<tr>
+		<td>RTDXF0</td>
+		<td>5020</td>
+		<td>DXF code 0 (used only by <a href="zds_buildlist.htm">zds_buildlist</a>).</td>
+	</tr>
+	<tr>
+		<td>RTT</td>
+		<td>5021</td>
+		<td>T (true) atom.</td>
+	</tr>
+	<tr>
+		<td>RTRESBUF</td>
+		<td>5023</td>
+		<td>Result buffer.</td>
+	</tr>
+</table>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2022 广州中望龙腾软件股份有限公司 All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

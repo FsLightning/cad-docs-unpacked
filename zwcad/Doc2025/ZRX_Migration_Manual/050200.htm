@@ -1,0 +1,3245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Updating from ARX2008 to ARX 2019</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:等线;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:新宋体;
+	panose-1:2 1 6 9 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\@等线";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\@新宋体";}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:等线;}
+h1
+	{mso-style-link:"标题 1 字符";
+	margin-top:17.0pt;
+	margin-right:0cm;
+	margin-bottom:16.5pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:240%;
+	page-break-after:avoid;
+	font-size:22.0pt;
+	font-family:"Calibri",sans-serif;
+	font-weight:bold;}
+h2
+	{mso-style-link:"标题 2 字符";
+	margin-top:13.0pt;
+	margin-right:0cm;
+	margin-bottom:13.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:173%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Cambria",serif;
+	font-weight:bold;}
+h3
+	{mso-style-link:"标题 3 字符";
+	margin-top:13.0pt;
+	margin-right:0cm;
+	margin-bottom:13.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:173%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri",sans-serif;
+	font-weight:bold;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:21.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:42.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"页眉 字符";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	layout-grid-mode:char;
+	border:none;
+	padding:0cm;
+	font-size:9.0pt;
+	font-family:等线;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"页脚 字符";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:9.0pt;
+	font-family:等线;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"标题 字符";
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	text-align:center;
+	font-size:16.0pt;
+	font-family:"Cambria",serif;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{mso-style-link:"文档结构图 字符";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:9.0pt;
+	font-family:宋体;}
+p
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:宋体;}
+pre
+	{mso-style-link:"HTML 预设格式 字符";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:宋体;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"批注框文本 字符";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:9.0pt;
+	font-family:等线;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:21.0pt;
+	font-size:10.5pt;
+	font-family:等线;}
+span.MsoIntenseReference
+	{font-variant:small-caps;
+	color:#C0504D;
+	letter-spacing:.25pt;
+	font-weight:bold;
+	text-decoration:underline;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.a
+	{mso-style-name:"页眉 字符";
+	mso-style-link:页眉;}
+span.a0
+	{mso-style-name:"页脚 字符";
+	mso-style-link:页脚;}
+span.1
+	{mso-style-name:"标题 1 字符";
+	mso-style-link:"标题 1";
+	font-family:"Calibri",sans-serif;
+	font-weight:bold;}
+span.2
+	{mso-style-name:"标题 2 字符";
+	mso-style-link:"标题 2";
+	font-family:"Cambria",serif;
+	font-weight:bold;}
+span.3
+	{mso-style-name:"标题 3 字符";
+	mso-style-link:"标题 3";
+	font-family:"Calibri",sans-serif;
+	font-weight:bold;}
+span.HTML
+	{mso-style-name:"HTML 预设格式 字符";
+	mso-style-link:"HTML 预设格式";
+	font-family:宋体;}
+span.topheadtext
+	{mso-style-name:tophead_text;}
+span.a1
+	{mso-style-name:"批注框文本 字符";
+	mso-style-link:批注框文本;}
+span.a2
+	{mso-style-name:"标题 字符";
+	mso-style-link:标题;
+	font-family:"Cambria",serif;
+	font-weight:bold;}
+p.10, li.10, div.10
+	{mso-style-name:样式1;
+	mso-style-link:"样式1 Char";
+	margin-top:13.0pt;
+	margin-right:0cm;
+	margin-bottom:13.0pt;
+	margin-left:18.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-18.0pt;
+	line-height:173%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	font-weight:bold;}
+span.shorttext
+	{mso-style-name:short_text;}
+span.1Char
+	{mso-style-name:"样式1 Char";
+	mso-style-link:样式1;
+	font-family:"Cambria",serif;
+	font-weight:bold;}
+span.alt-edited1
+	{mso-style-name:alt-edited1;
+	color:#4D90F0;}
+span.def
+	{mso-style-name:def;}
+span.st1
+	{mso-style-name:st1;}
+span.charcourier
+	{mso-style-name:charcourier;}
+span.a3
+	{mso-style-name:"文档结构图 字符";
+	mso-style-link:文档结构图;
+	font-family:宋体;}
+span.tgt
+	{mso-style-name:tgt;}
+.MsoChpDefault
+	{font-family:等线;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+
+
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2024 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">Updating from ARX2008 to ARX 2019</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+
+
+
+<p class=MsoNormal style='margin-left:20.9pt;text-indent:-20.9pt'><a
+name="_Toc50715771"></a><a name="_Toc398794582"></a><a name="_Toc345427640"></a><a
+name="_Toc345426018"></a><a name="_Toc345425883"></a><a name="_Toc317586953"></a><a
+name="_Toc317586857"></a><span lang=EN-US
+style='font-size:12.0pt;font-family:Wingdings;color:black'>l<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><b><i><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>Updating
+from ARX2008 to ARX 20</span></i></b><b><i><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif'>19</span></i></b></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><b><span lang=EN-US style='font-size:12.0pt;font-family:
+"Calibri",sans-serif'>a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>Some
+functions in ARX2019 add the final keyword (new feature of C++11), so that the
+interface cannot be overridden by the subclass, which is realized by calling
+another newly added overloaded function inside the function. For example, the
+following functions:</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:21.05pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=279 valign=top style='width:209.5pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2008</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.25pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2019</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=279 valign=top style='width:209.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>virtual
+  const ACHAR * AcApLayoutManager::findActiveTab () = 0;</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual const ACHAR * AcApLayoutManager::findActiveTab
+  () <span style='background:yellow'>final;</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=279 valign=top style='width:209.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>virtual
+  ACHAR * AcApLayoutManager::getNextNewLayoutName </span></p>
+  <p class=MsoNormal align=left style='text-align:left;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>(AcDbDatabase*
+  useDb = NULL) = 0;</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>virtual
+  ACHAR * AcApLayoutManager::getNextNewLayoutName </span></p>
+  <p class=MsoNormal align=left style='text-align:left;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>(AcDbDatabase*
+  useDb = nullptr) <span style='background:yellow'>final</span>;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=279 valign=top style='width:209.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual Acad::ErrorStatus&nbsp;&nbsp; AcDbEntity::setColor(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const AcCmColor&amp; color,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>Autodesk::Boolean doSubents = true</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual Acad::ErrorStatus&nbsp;&nbsp; AcDbEntity::setColor(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const AcCmColor&amp; color,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>bool doSubents = true</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) <span style='background:yellow'>final</span>;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=279 valign=top style='width:209.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ZSOFT_DEPRECATED virtual void beginClose(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbDatabase* pDwg</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ZSOFT_DEPRECATED virtual void beginClose(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbDatabase*</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) <span style='background:yellow'>final</span>;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=279 valign=top style='width:209.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:18.0pt'><span
+lang=EN-US style='font-size:12.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If you
+use these functions in your code, please modify your code. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; accordingly.</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt;
+line-height:18.0pt'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif'>b)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>Add the
+delete keyword to some functions in ARX2019 (new feature in C++11) and disable
+the use of functions generated by default by the compiler, for example:</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:21.05pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=276 valign=top style='width:206.95pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2008</span></p>
+  </td>
+  <td width=249 valign=top style='width:186.8pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2019</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=276 valign=top style='width:206.95pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbIdMapping::AcDbIdMapping(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const AcDbIdMapping&amp;</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=249 valign=top style='width:186.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbIdMapping::AcDbIdMapping(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const AcDbIdMapping&amp;</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) = <span style='background:yellow'>delete</span>;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=276 valign=top style='width:206.95pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbIdMapping&amp; AcDbIdMapping::operator= (</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const AcDbIdMapping&amp;</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=249 valign=top style='width:186.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbIdMapping&amp; AcDbIdMapping::operator= (</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const AcDbIdMapping&amp;</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) = <span style='background:yellow'>delete</span>;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=276 valign=top style='width:206.95pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbEntity::AcDbEntity (</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const AcDbEntity&amp;</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=249 valign=top style='width:186.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbEntity::AcDbEntity (</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const AcDbEntity&amp;</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) = <span style='background:yellow'>delete</span>;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=276 valign=top style='width:206.95pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+  <td width=249 valign=top style='width:186.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='line-height:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If
+you use these functions in your code, please modify your code accordingly.</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt;
+line-height:18.0pt'><b><span lang=EN-US
+style='font-size:16.0pt;font-family:"Calibri",sans-serif'>c)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;'>ARX2019
+changes the access of some functions from public to protected, and adds the sub
+string at the beginning of the function name, for example:</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:21.05pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=279 valign=top style='width:209.0pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2008</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.75pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2019</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=279 valign=top style='width:209.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>public: </span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual Acad::ErrorStatus AcDbAttributeDefinition::</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>getClassID(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>CLSID* pClsid</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>)const;</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>protected:</span><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Calibri",sans-serif'> </span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual Acad::ErrorStatus AcDbAttributeDefinition::</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>subGetClassID</span><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Calibri",sans-serif'>(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>CLSID* pClsid</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) const <span style='background:yellow'>override</span>;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=279 valign=top style='width:209.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>public:</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual Adesk::UInt32&nbsp; AcDbCamera::</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>setAttributes(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcGiDrawableTraits* pTraits</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+  background:yellow'>protected:</span><span lang=EN-US style='font-size:12.0pt;
+  font-family:"Calibri",sans-serif'> </span></p>
+  <p class=MsoNormal align=left style='text-align:left;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>virtual Adesk::UInt32&nbsp;
+  AcDbCamera::</span></p>
+  <p class=MsoNormal align=left style='text-align:left;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+  background:yellow'>subSetAttributes</span><span lang=EN-US style='font-size:
+  12.0pt;font-family:"Calibri",sans-serif'>(</span></p>
+  <p class=MsoNormal align=left style='text-align:left;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>AcGiDrawableTraits*
+  pTraits</span></p>
+  <p class=MsoNormal align=left style='text-align:left;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>) <span
+  style='background:yellow'>override;</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=279 valign=top style='width:209.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>public: </span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual Acad::ErrorStatus AcDbText::getClassID(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>CLSID* pClsid</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) const;</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>protected</span><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Calibri",sans-serif'>:</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual Acad::ErrorStatus AcDbText::<span
+  style='background:yellow'>subGetClassID</span>(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>CLSID* pClsid</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) const <span style='background:yellow'>override</span>;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=279 valign=top style='width:209.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='line-height:18.0pt'><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If
+you use these functions in your code, please modify your code accordingly.</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>d)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ARX2019
+changes the returned value of <span style='color:red'>resourceInstance()</span>
+from HINSTANCE to AcRxResourceInstance&amp;, for example</span><span
+style='font-size:12.0pt'>：</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>virtual const <span
+style='background:yellow'>HINSTANCE</span> resourceHandle() const = 0;</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>-&gt;virtual const <span
+style='background:yellow'>AcRxResourceInstance&amp;</span> resourceInstance()
+const = 0;</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>If used <span style='color:red'>resourceHandle()</span>
+in your code, you need to change the returned value.</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt;
+line-height:18.0pt'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif'>e)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ARX2019
+changes the </span></a><span lang=EN-US style='font-family:"Arial",sans-serif;
+background:#F7F8FA'>parameter </span><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif'>of the <span
+style='color:red'>acdbValidateSetup()</span> function from Adesk::Int32 to const
+AcLocale&amp;, for example</span><span style='font-size:12.0pt'>：</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm;line-height:
+18.0pt'><b><i><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+color:#0070C0'>Acad::ErrorStatus acdbValidateSetup(<span style='background:
+yellow'>Adesk::Int32 lcid</span>);</span></i></b></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm;line-height:
+18.0pt'><b><i><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+color:#0070C0'>-&gt;</span></i></b><b><i><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#0070C0'> A</span></i></b><b><i><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>cad::ErrorStatus
+acdbValidateSetup(<span style='background:yellow'>const AcLocale&amp; loc</span>);</span></i></b></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm;line-height:
+18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>If
+used <span style='color:red'>acdbValidateSetup()</span> in your code, you need
+to change the </span><span lang=EN-US style='font-family:"Arial",sans-serif;
+background:#F7F8FA'>parameter</span><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif'>.</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt;
+line-height:18.0pt'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif'>f)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ARX2019 <span
+style='background:#F7F8FA'>changes the parameter of the </span><span
+style='color:red;background:#F7F8FA'>dxfout()</span><span style='
+background:#F7F8FA'> function in the AcDbObject class from </span>Adesk::uchar*
+to const AcDbObjectIdArray *</span><span style='font-size:12.0pt'>，</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>for
+example</span><span style='font-size:12.0pt'>：</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm;line-height:
+18.0pt'><b><i><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+color:#0070C0'>Acad::ErrorStatus&nbsp; AcDbObject::dxfOut(ZcDbDxfFiler* pFiler,
+Adesk::Boolean allXdFlag, <span style='background:yellow'>Adesk::uchar*</span>
+regAppTable) const;</span></i></b></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm;line-height:
+18.0pt'><b><i><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+color:#0070C0'>-&gt;Acad::ErrorStatus&nbsp; AcDbObject::dxfOut(AcDbDxfFiler*
+pFiler, bool allXdata, <span style='background:yellow'>const AcDbObjectIdArray
+*</span> pRegAppIds) const;</span></i></b></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm;line-height:
+18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>If
+used <span style='color:red;background:#F7F8FA'>dxfout()</span> in your code,
+you need to change the </span><span lang=EN-US style='font-family:"Arial",sans-serif;
+background:#F7F8FA'>parameter</span><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif'>.</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>g)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ARX2019
+changes parameter of some function from HardwareFeature to const AcUniqueString*,
+for example</span><span style='font-size:12.0pt'>：</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:21.05pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=279 valign=top style='width:209.55pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2008</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.2pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2019</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=279 valign=top style='width:209.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual bool AcGsConfig::isFeatureEnabled (</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>HardwareFeature feature</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) = 0;</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual bool AcGsConfig::isFeatureEnabled (</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>const AcUniqueString*</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) const = 0;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=279 valign=top style='width:209.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual void AcGsConfig::setFeatureEnabled (</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>HardwareFeature feature,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>bool bEnable = true</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) = 0;</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual void AcGsConfig::setFeatureEnabled (</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>const AcUniqueString*</span><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>bool bEnable = true</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) = 0;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=279 valign=top style='width:209.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm;line-height:
+18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>If
+used <span style='background:#F7F8FA'>these functions</span> in your code, you
+need to change the parameter.</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt;
+line-height:18.0pt'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif'>h)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ARX2019
+adds parameter AcDbDatabase* pDb = NULL(AcDbDatabase* pDb = nullptr) to some
+functions, for example:</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:21.05pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2008</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2019</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual Acad::ErrorStatus AcDbLayoutManager::setCurrentLayout(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const ACHAR * newname</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) = 0;</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual Acad::ErrorStatus AcDbLayoutManager::setCurrentLayout(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const ACHAR * newname, <span style='background:yellow'>AcDbDatabase*
+  pDb = NULL</span></span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) = 0;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual AcDbObjectId AcDbLayoutManager::getActiveLayoutBTRId
+  () = 0;</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual AcDbObjectId AcDbLayoutManager::getActiveLayoutBTRId
+  (</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>const AcDbDatabase* pDb = NULL</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) = 0;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual const ACHAR *&nbsp;&nbsp;&nbsp; AcDbLayoutManager::findActiveLayout
+  (</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>bool allowModel</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) = 0;</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual const ACHAR *&nbsp; AcDbLayoutManager::findActiveLayout(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>bool allowModel, </span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>const AcDbDatabase* pDb = nullptr</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) final;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm;line-height:
+18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>If
+used <span style='background:#F7F8FA'>these functions</span> in your code, you
+need to take care of the new parameter.</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt;
+line-height:18.0pt'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif'>i)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+background:#F7F8FA'>ARX2019 adds an int parameter to some
+functions</span><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>,
+for example</span><span style='font-size:12.0pt'>：</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:21.05pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=279 valign=top style='width:209.5pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2008</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.25pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2019</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=279 valign=top style='width:209.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>static int AdCharFormatter::isNativeToCodePage(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>wchar_t wch,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>unsigned nCodePage,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>char *pChNative = NULL</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>)</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>static int AdCharFormatter::isNativeToCodePage(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>wchar_t wch,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>unsigned nCodePage,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>char *pChNative,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>int bufferLen</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=279 valign=top style='width:209.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual Acad::ErrorStatus AcDbPolyline::addVertexAt(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>unsigned int index,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const AcGePoint2d&amp; pt,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>double bulge = 0.,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>double startWidth = -1.,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>double endWidth = -1</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual Acad::ErrorStatus addVertexAt(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>unsigned int index,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=FR style='font-size:12.0pt;font-family:"Calibri",sans-serif'>const
+  AcGePoint2d&amp; pt,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=FR style='font-size:12.0pt;font-family:"Calibri",sans-serif'>double
+  bulge = 0.,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>double startWidth = -1.,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>double endWidth = -1.,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>Adesk::Int32 vertexIdentifier = 0</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=279 valign=top style='width:209.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>static Acad::ErrorStatus AcDbRasterImageDef::suggestName(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbDictionary* pImageDictionary, </span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const ACHAR* pNewImagePathName, </span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ACHAR* newImageName</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>static Acad::ErrorStatus AcDbRasterImageDef::suggestName(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbDictionary* pImageDictionary,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const ACHAR* pNewImagePathName,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ACHAR* newImageName, </span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>size_t nSize</span><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Calibri",sans-serif'> </span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=279 valign=top style='width:209.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+  <td width=246 valign=top style='width:184.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm;line-height:
+18.0pt'><span lang=EN-US style='font-size:12.0pt'> </span><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif'>If used <span
+style='background:#F7F8FA'>these functions</span> in your code, you need to add
+an int parameter.</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt;
+line-height:18.0pt'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif'>j)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+background:#F7F8FA'>ARX2019 adds a bool parameter to some
+functions</span><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>,
+for example</span><span style='font-size:12.0pt'>：</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:21.05pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2008</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2019</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>static AcDbEntity*&nbsp; AcDbPointRef::subentPtr(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const AcDbFullSubentPath&amp; objPath,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>bool&amp; isCloned,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>bool&amp; reverseArc</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>static AcDbEntity*&nbsp; AcDbPointRef::subentPtr(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const AcDbFullSubentPath&amp; objPath,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>bool&amp; isCloned,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>bool&amp; reverseArc,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>bool&amp; isStandAloneArc</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>void AcGeCurve3d::getSamplePoints(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>double fromParam,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>double toParam,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>double approxEps,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcGePoint3dArray&amp; pointArray, AcGeDoubleArray&amp;
+  paramArray</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) const;</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>void AcGeCurve3d::getSamplePoints(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>double fromParam,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>double toParam,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>double approxEps,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcGePoint3dArray&amp; pointArray,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcGeDoubleArray&amp; paramArray,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>bool forceResampling = false</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) const;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm;line-height:
+18.0pt'><span lang=EN-US style='font-size:12.0pt'> </span><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif'>If used <span
+style='background:#F7F8FA'>these functions</span> in your code, you need to add
+a bool parameter.</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>k)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ARX2019
+changes the returned value and parameter of <span style='color:red'>findLayoutNamed()
+</span>function in AcDbLayoutManager class, for example:</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>virtual AcDbLayout * AcDbLayoutManager::findLayoutNamed
+(const ACHAR * name, bool leaveRecordOpen = false) = 0;</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>-&gt;</span></i></b><b><i><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#0070C0'> </span></i></b><b><i><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>virtual
+<span style='background:yellow'>AcDbObjectId</span> AcDbLayoutManager::findLayoutNamed
+(const ACHAR* name, <span style='background:yellow'>const AcDbDatabase* pDb = NULL</span>)
+= 0;</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>If you use this functions in your code,
+please modify your code accordingly.</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>l)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+background:#F7F8FA'>ARX2019 adds const to partial function return
+values</span><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>,
+for example</span><span style='font-size:12.0pt'>：</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:21.05pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2008</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2019</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual ACHAR * AcDbHostApplicationServices::getAlternateFontName()
+  const;</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual <span style='background:yellow'>const</span>
+  ACHAR * AcDbHostApplicationServices::getAlternateFontName() const;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual ACHAR * AcDbHostApplicationServices::getFontMapFileName()
+  const;</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual <span style='background:yellow'>const</span>
+  ACHAR * AcDbHostApplicationServices::getFontMapFileName() const;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbVoidPtrArray*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  reactors();</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>const</span><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Calibri",sans-serif'> AcDbVoidPtrArray*&nbsp;&nbsp;
+  reactors() const</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-left:21.0pt;line-height:18.0pt'><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+background:#F7F8FA'>If you use these functions in your code, you need to change
+the type of variable that receives the return value or cast it, as shown below</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>:</span></p>
+
+<p class=MsoNormal align=left style='margin-left:21.0pt;text-align:left;
+line-height:18.0pt'><b><i><span lang=EN-US style='font-size:12.0pt;font-family:
+"Calibri",sans-serif;color:#0070C0'>AcDbVoidPtrArray *pReactors = NULL;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></i></b></p>
+
+<p class=MsoNormal align=left style='margin-left:21.0pt;text-align:left;
+line-height:18.0pt'><b><i><span lang=EN-US style='font-size:12.0pt;font-family:
+"Calibri",sans-serif;color:#0070C0'>pReactors = pReactor-&gt;reactors();</span></i></b></p>
+
+<p class=MsoNormal align=left style='margin-left:21.0pt;text-align:left;
+line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>change
+to</span></p>
+
+<p class=MsoNormal align=left style='margin-left:21.0pt;text-align:left;
+line-height:18.0pt'><b><i><span lang=EN-US style='font-size:12.0pt;font-family:
+"Calibri",sans-serif;color:#0070C0'>const AcDbVoidPtrArray *pReactors = NULL;&nbsp;&nbsp;&nbsp; </span></i></b></p>
+
+<p class=MsoNormal align=left style='margin-left:21.0pt;text-align:left;
+line-height:18.0pt'><b><i><span lang=EN-US style='font-size:12.0pt;font-family:
+"Calibri",sans-serif;color:#0070C0'>pReactors = pReactor-&gt;reactors();</span></i></b></p>
+
+<p class=MsoNormal align=left style='margin-left:21.0pt;text-align:left;
+line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+'>or</span></p>
+
+<p class=MsoNormal align=left style='margin-left:21.0pt;text-align:left;
+line-height:18.0pt'><b><i><span lang=EN-US style='font-size:12.0pt;font-family:
+"Calibri",sans-serif;color:#0070C0'>AcDbVoidPtrArray *pReactors = NULL;</span></i></b></p>
+
+<p class=MsoNormal align=left style='margin-left:21.0pt;text-align:left;
+line-height:18.0pt'><b><i><span lang=EN-US style='font-size:12.0pt;font-family:
+"Calibri",sans-serif;color:#0070C0'>pReactors =
+(AcDbVoidPtrArray*)pEnt-&gt;reactors();</span></i></b></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt;
+line-height:18.0pt'><b><span lang=EN-US
+style='font-size:12.0pt'>m)<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+background:#F7F8FA'>Some function parameter types in ARX2019 change from
+LPCTSTR to const wchar_t*, from LPTSTR to wchar_t*, from TCHAR to wchar_t*,
+from ZTCHAR to wchar_t*, for example</span><span style='font-size:12.0pt'>：</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:21.05pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2008</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2019</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual PathErr Parse(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>LPCTSTR,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const BOOL wildcard_ok = FALSE );</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual PathErr Parse(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>const wchar_t*</span><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'> ,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>bool wildcard_ok = false</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) override;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>bool CAdUiPathname::GetFullPath(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>LPTSTR pBuf,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>size_t strBuffLen</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) const;</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>bool CAdUiPathname::GetFullPath(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>wchar_t *</span><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Calibri",sans-serif'> pBuf,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>size_t strBuffLen</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) const;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>bool acedLoadPartialMenu(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const TCHAR* pszMenuFile</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>bool acedLoadPartialMenu(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const <span style='background:yellow'>wchar_t*</span>
+  pszMenuFile</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>BOOL CAcUiPathname::Open(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>IZwFile** fdp,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const ACHAR *openmode</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>bool CAcUiPathname::Open(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>IZwFile** fdp,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const <span style='background:yellow'>wchar_t *</span>openmode</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:0cm;line-height:
+18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+background:#F7F8FA'>Since the project USES Unicode character set, LPCTSTR is
+equivalent to const wchar_t*, LPTSTR is equivalent to wchar_t*, TCHAR* is
+equivalent to wchar_t*, and the typedef wchar_t ZTCHAR is also equivalent to
+wchar_t*.</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>n)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ARX2019
+changes the parameter of some functions from __time64_t&amp; to Adesk::Time64&amp;,
+for example</span><span style='font-size:12.0pt'>：</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:21.05pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2008</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2019</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcFdFieldValue::ZcFdFieldValue(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const __time64_t&amp; date</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcFdFieldValue::ZcFdFieldValue(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const <span style='background:yellow'>Adesk::Time64</span>&amp;
+  date</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcValue&amp; ZcValue::operator=&nbsp; (</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>__time64_t date</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcValue&amp; ZcValue::operator= (</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>Adesk::Time64</span><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Calibri",sans-serif'> date</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=left style='margin-left:21.0pt;text-align:left;
+line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+background:#F7F8FA'>If you use these functions in your code, you
+need to change the argument type from </span><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif'>__time64_t&amp;<span style='background:#F7F8FA'> to Adesk::Time64&amp;</span></span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>o)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ARX2019
+changes the parameter of some functions from SYSTEMTIME&amp; to std::tm&amp;</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>AcFdFieldValue::AcFdFieldValue(const
+SYSTEMTIME&amp; date);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>-&gt;AcFdFieldValue::AcFdFieldValue(const
+<span style='background:yellow'>std::tm</span>&amp; date);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>If you use these functions in your code, you
+need to change the parameter type from SYSTEMTIME&amp; to std ::tm&amp;, but
+SYSTEMTIME to milliseconds and std ::tm to seconds.</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>p)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+background:#F7F8FA'>The </span><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif;color:red;background:#F7F8FA'>getElemAt()</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+background:#F7F8FA'> function for AcGiVariant in ARX2019 removes the parameter
+AcGiVariant &amp; and changes the return value to AcGiVariant*, as shown below</span><span
+style='font-size:12.0pt'>：</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>Acad::ErrorStatus
+AcGiVariant::getElemAt(int, ACHAR*&amp;, AcGiVariant &amp;) const</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>-&gt;<span
+style='background:yellow'>AcGiVariant*</span> AcGiVariant::getElemAt(int, ACHAR*&amp;)
+const</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif;background:#F7F8FA'>If your code
+USES the </span><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+color:red;background:#F7F8FA'>getElemAt()</span><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+background:#F7F8FA'> function, you need to change the parameters passed and the
+type of return value received.</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>q)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ARX2019
+changes the function parameter type is from int to enumeration type, for
+example:</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:21.05pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2008</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2019</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual Acad::ErrorStatus AcGiTextStyle::setFont(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const ACHAR * pTypeface,</span></p>
+  <p class=MsoListParagraph style='text-indent:0cm;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>Adesk::Boolean
+  bold,</span></p>
+  <p class=MsoListParagraph style='text-indent:0cm;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>Adesk::Boolean
+  italic,</span></p>
+  <p class=MsoListParagraph style='text-indent:0cm;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>int
+  charset,</span></p>
+  <p class=MsoListParagraph style='text-indent:0cm;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>int
+  pitchAndFamily</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>Virtual Acad::ErrorStatus AcGiTextStyle::setFont(</span></p>
+  <p class=MsoListParagraph style='text-indent:0cm;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>const ACHAR
+  * pTypeface,</span></p>
+  <p class=MsoListParagraph style='text-indent:0cm;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>Adesk::Boolean
+  bold,</span></p>
+  <p class=MsoListParagraph style='text-indent:0cm;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>Adesk::Boolean
+  italic,</span></p>
+  <p class=MsoListParagraph style='text-indent:0cm;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+  background:yellow'>Charset charset</span><span lang=EN-US style='font-size:
+  12.0pt;font-family:"Calibri",sans-serif'>,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>Autodesk::AutoCAD::PAL::FontUtils::FontPitch
+  pitch</span><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>Autodesk::AutoCAD::PAL::FontUtils::FontFamily
+  family</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual Acad::ErrorStatus AcGiTextStyle::font(</span></p>
+  <p class=MsoListParagraph style='text-indent:0cm;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ACHAR
+  *&amp; pTypeface,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>Adesk::Boolean&amp; bold,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>Adesk::Boolean&amp; italic,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>int&amp; charset,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>int&amp; pitchAndFamily</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) const;</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual Acad::ErrorStatus AcGiTextStyle::font(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ACHAR *&amp; pTypeface,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>bool&amp; bold,bool&amp; italic,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>Charset&amp; charset</span><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>Autodesk::AutoCAD::PAL::FontUtils::FontPitch&amp;
+  pitch</span><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>Autodesk::AutoCAD::PAL::FontUtils::FontFamily&amp;
+  family</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) const final;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcString::AcString(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>int nCtorFlags, </span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>unsigned nArg</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcString::AcString(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>eFormat nCtorFlags</span><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>unsigned nArg</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-left:21.0pt;line-height:18.0pt'><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>If you use
+these functions in your code, you need to modify your code accordingly, for
+example</span><span style='font-size:12.0pt'>：</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;line-height:18.0pt'><b><i><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>int
+bBold, bItalic;</span></i></b></p>
+
+<p class=MsoNormal style='margin-left:7.75pt;line-height:18.0pt;text-autospace:
+none'><b><i><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+color:#0070C0'>&nbsp;&nbsp;&nbsp;&nbsp; int tmp0, tmp1;</span></i></b></p>
+
+<p class=MsoNormal style='margin-left:7.75pt;line-height:18.0pt;text-autospace:
+none'><b><i><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+color:#0070C0'>&nbsp;&nbsp;&nbsp;&nbsp; BOOL bWinFont =
+(m_textStyle.font(pTypeface, bBold, bItalic, tmp0, tmp1) == &nbsp;&nbsp; Acad::eOk);</span></i></b></p>
+
+<p class=MsoNormal style='margin-left:7.75pt;line-height:18.0pt'><span
+lang=EN-US style='font-size:12.0pt;color:#0070C0'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+lang=EN-US style='font-size:12.0pt'>Change to</span></p>
+
+<p class=MsoNormal style='margin-left:7.75pt;line-height:18.0pt'><b><i><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>&nbsp;&nbsp;&nbsp;&nbsp; bool
+bBold, bItalic;</span></i></b></p>
+
+<p class=MsoNormal style='margin-left:7.75pt;line-height:18.0pt;text-autospace:
+none'><b><i><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+color:#0070C0'>&nbsp;&nbsp;&nbsp;&nbsp; Charset charset;</span></i></b></p>
+
+<p class=MsoNormal style='margin-left:7.75pt;line-height:18.0pt;text-autospace:
+none'><b><i><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+color:#0070C0'>&nbsp;&nbsp;&nbsp;&nbsp; Autodesk::AutoCAD::PAL::FontUtils::FontPitch
+pitch;</span></i></b></p>
+
+<p class=MsoNormal style='margin-left:7.75pt;line-height:18.0pt;text-autospace:
+none'><b><i><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+color:#0070C0'>&nbsp;&nbsp;&nbsp;&nbsp; Autodesk::AutoCAD::PAL::FontUtils::FontFamily
+family;</span></i></b></p>
+
+<p class=MsoNormal style='margin-left:7.75pt;line-height:18.0pt;text-autospace:
+none'><b><i><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+color:#0070C0'>&nbsp;&nbsp;&nbsp;&nbsp; BOOL bWinFont =
+(m_textStyle.font(pTypeface, bBold, bItalic, charset, pitch, &nbsp;&nbsp;&nbsp;&nbsp; family)
+== Acad::eOk);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>r)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+background:#F7F8FA'>Add the parameter AcGsGraphicsKernel &amp;kernel to some functions
+in ARX2019, for example</span><span style='font-size:12.0pt'>：</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:21.05pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2008</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2019</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual AcGsModel* AcGsManager::createAutoCADModel
+  (void) = 0;</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual AcGsModel* AcGsManager::createAutoCADModel (</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>AcGsGraphicsKernel &amp;kernel</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) = 0;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual AcGsView* AcGsManager::createAutoCADViewport(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbViewportTableRecord *vp</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>)&nbsp; = 0;</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual AcGsView* AcGsManager::createAutoCADViewport(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>AcGsGraphicsKernel &amp;kernel</span><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbViewportTableRecord *pVTR</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) = 0;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual AcGsView* AcGsManager::createAutoCADView(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcGiDrawable * drawable</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>)= 0;</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual AcGsView* AcGsManager::createAutoCADView(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>AcGsGraphicsKernel &amp;kernel</span><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcGiDrawable *pDrawable</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>)= 0;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:0cm;line-height:
+18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+background:#F7F8FA'>Because some functions of AcGsManager have
+changed, getGSClassFactory() no longer exists, the AcGsGraphicsKernel class has
+replaced the AcGsClassFactory class, and GS functions such as
+createAutoCADModel also need to specify a specific kenel to create. Get kernel
+method by previous</span><span style='font-size:12.0pt'>：</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:21.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>AcGsGraphicsKernel
+*pKernel = pGsManager-&gt;getGSClassFactory();</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:21.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>Change to:</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:21.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>AcGsKernelDescriptor
+descriptor;</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:21.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>descriptor.addRequirement(AcGsKernelDescriptor::k3DDrawing);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:21.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=FR style='font-size:12.0pt;
+font-family:"Calibri",sans-serif;color:#0070C0'>AcGsGraphicsKernel *pKernel =
+AcGsManager::acquireGraphicsKernel(descriptor);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:21.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif;background:#F7F8FA'>But because
+AcGsKernelDescriptor class and AcGsManager: : acquireGraphicsKernel method
+internal implementation has not been completed, so the ZWCAD still use the
+original method:</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:21.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>AcGsGraphicsKernel* kernel=
+pGsManager -&gt;getGSClassFactory();</span></i></b></p>
+
+<p class=MsoListParagraph style='margin-left:21.0pt;text-indent:0cm;line-height:
+18.0pt'><span class=tgt><span lang=EN-US style='font-size:12.0pt;font-family:
+"Calibri",sans-serif;background:#F7F8FA'>Get and use the kernel,
+and you cannot create Model, Device, View, and so on with the specified
+kernel.The internal implementation of GS functions such as
+createZWCADModel(ZcGsGraphicsKernel &amp;kernel) still follows the original
+logic, and the incoming kernel parameters are not used.</span></span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>s)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+background:#F7F8FA'>Some functions in RX2019 add a return value, for example</span><span
+style='font-size:12.0pt'>：</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:21.05pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2008</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2019</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>void AcString::formatV(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const ACHAR *pszFmt,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>va_list args</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>AcString &amp;</span><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>
+  ZcString::formatV(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>const ACHAR *pszFmt,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>va_list args</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph style='text-indent:0cm;line-height:18.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>void CAdUiOwnerDrawButton::SetBitmapOffsets(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>int nBorderOffset,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>int nFocusRectOffset</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>bool</span><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Calibri",sans-serif'> CAdUiOwnerDrawButton::SetBitmapOffsets(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>int nBorderOffset,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>int nFocusRectOffset</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>void&nbsp;&nbsp; AcDbDatabase::addReactor(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbDatabaseReactor* pReactor</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) const;</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>Acad::ErrorStatus</span><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>&nbsp; AcDbDatabase::addReactor(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbDatabaseReactor* pReactor</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) const;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=262 valign=top style='width:196.85pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+  <td width=263 valign=top style='width:196.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoListParagraph align=left style='margin-left:21.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif;background:#F7F8FA'>If you use
+these functions in your code, you can define variables to receive their return
+values</span><span style='font-size:12.0pt'>。</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>t)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ARX2019
+changes the parameter of some functions from CString&amp; to AcString&amp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:21.05pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2008</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2019</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>void CAdUiPathname::GetFilename(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>CString&amp;</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) const;</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>void CAdUiPathname::GetFilename(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>AcString&amp;</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) const;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>void CAdUiPathname::GetExtension(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>CString&amp;</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) const;</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>void CAdUiPathname::GetExtension(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>AcString&amp;</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) const;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>Acad::ErrorStatus formatMeasurement(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ACHAR *MTextContentBuffer, </span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>double measurement, </span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ACHAR *dimensionText</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>Acad::ErrorStatus formatMeasurement(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>AcString</span><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Calibri",sans-serif'> &amp;
+  sMTextContent, </span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=FR style='font-size:12.0pt;font-family:"Calibri",sans-serif'>double
+  measurement, </span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=FR style='font-size:12.0pt;font-family:"Calibri",sans-serif'>const
+  ACHAR *dimensionText = nullptr</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=FR style='font-size:12.0pt;font-family:"Calibri",sans-serif'>);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbField::EvalStatus AcDbField::evaluationStatus(int*
+  pnErrCode = NULL,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ACHAR ** pszErrMsg = NULL</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) const;</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbField::EvalStatus AcDbField::evaluationStatus(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>int* pnErrCode ,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>AcString</span><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Calibri",sans-serif'> * pszErrMsg </span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) const;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoListParagraph align=left style='margin-left:21.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif;background:#F7F8FA'>If you use
+these functions in your code, you need to change the parameter type to Acstring.</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>u)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+background:#F7F8FA'>ARX2019 removes arguments from some functions, for example</span><span
+style='font-size:12.0pt'>：</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:21.05pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2008</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2019</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcadApp::ErrorStatus AcadAppInfo::writeToRegistry(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>bool bObjDbx = false,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>bool skipHKLM = false</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcadApp::ErrorStatus AcadAppInfo::writeToRegistry();</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcadApp::ErrorStatus AcadAppInfo::delFromRegistry(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>bool bObjDbx = false</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcadApp::ErrorStatus AcadAppInfo::delFromRegistry();</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual bool AcGsConfig::configure (</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>const ACHAR * pszConfigInfo</span><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>bool bShowDialog</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>) = 0;</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>virtual bool AcGsConfig::configure (void) = 0;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoListParagraph align=left style='margin-left:21.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif;background:#F7F8FA'>If you use
+these functions in your code, you need to remove the arguments as they change</span><span
+style='font-size:12.0pt'>。</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>v)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+background:#F7F8FA'>In ARX2019, add and delete const modifiers for function
+parameters</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:21.05pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2008</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>ARX2019</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>Acad::ErrorStatus&nbsp;&nbsp; AcDbGroup::prepend(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbObjectIdArray ids</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>Acad::ErrorStatus&nbsp;&nbsp; AcDbGroup::prepend(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>const</span><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Calibri",sans-serif'> AcDbObjectIdArray
+  &amp; ids</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>Acad::ErrorStatus&nbsp;&nbsp; AcDbGroup::insertAt(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>Adesk::UInt32 idx,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbObjectIdArray ids</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>Acad::ErrorStatus&nbsp;&nbsp; AcDbGroup::insertAt(</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>Adesk::UInt32 idx,</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>const</span><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Calibri",sans-serif'> AcDbObjectIdArray
+  &amp; ids</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>Acad::ErrorStatus AcDbPlotSettings::setShadePlot (</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>const</span><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Calibri",sans-serif'> AcDbPlotSettings::ShadePlotType
+  type, </span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif;background:yellow'>const</span><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Calibri",sans-serif'> AcDbObjectId
+  shadePlotId);</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>Acad::ErrorStatus AcDbPlotSettings::setShadePlot (</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbPlotSettings::ShadePlotType type, </span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>AcDbObjectId shadePlotId</span></p>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoListParagraph align=left style='text-align:left;text-indent:0cm;
+  line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:
+  "Calibri",sans-serif'>More</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoListParagraph align=left style='margin-left:21.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif;background:#F7F8FA'>If you use
+these functions in your code, add or remove the const modifiers to the passed
+arguments depending on the changes</span><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif'>.</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>w)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ARX2019
+changes the parameter of the <span style='color:red'>acquireString()</span>
+function in AcEdJig from a pointer to a pointer array, as shown below</span><span
+style='font-size:12.0pt'>：</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>DragStatus
+AcEdJig::acquireString(ACHAR* str);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>-&gt;</span></i></b><b><i><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#0070C0'> </span></i></b><b><i><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>DragStatus
+ZcEdJig::acquireString(<span style='background:yellow'>ACHAR* (&amp;str)[2049]</span>);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>If your code use this interface, the code needs
+to be modified as shown below</span><span style='font-size:12.0pt'>：</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>TCHAR KWord[20]</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>acquireString(KWord);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>Change to:</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>TCHAR KWord[2049];</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>acquireString(KWord);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>x)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>The return
+value of the function pointer has been modified in ARX2019, as shown below</span><span
+style='font-size:12.0pt'>：</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>typedef BOOL (*AcedFilterWinMsgFn)(MSG*)
+</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>-&gt;typedef <span
+style='background:yellow'>bool</span> (*AcedFilterWinMsgFn)(MSG*)</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>bool
+acedRegisterFilterWinMsg(const AcedFilterWinMsgFn pfn);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>bool
+acedRemoveFilterWinMsg(const AcedFilterWinMsgFn pfn);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>If your code use the <span style='color:red'>acedRegisterFilterWinMsg()</span>
+and <span style='color:red'>acedRemoveFilterWinMsg()</span> interfaces, you
+need to change the parameter type from a BOOL to a bool, as shown below</span><span
+style='font-size:12.0pt'>：</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>static BOOL
+MouseMoveMonitor(MSG* msg) </span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>-&gt;static <span
+style='background:yellow'>bool</span> MouseMoveMonitor(MSG* msg)
+acedRegisterFilterWinMsg(MouseMoveMonitor);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>acedRemoveFilterWinMsg(MouseMoveMonitor);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>y)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>Some
+classes in ARX2019 add pure virtual functions, such as the AcGiGeometry class:</span><span
+style='font-size:12.0pt'>：</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>virtual AcGeMatrix3d
+pushPositionTransform</span></i></b><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif'> <span style='color:#0070C0'>(AcGiPositionTransformBehavior
+behavior, const AcGePoint3d&amp; offset) = 0;</span></span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>virtual AcGeMatrix3d
+pushScaleTransform (AcGiScaleTransformBehavior</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>behavior, const AcGePoint3d&amp;
+extents) = 0;</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>virtual AcGeMatrix3d
+pushOrientationTransform</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>(AcGiOrientationTransformBehavior
+behavior) = 0;</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>If you have a class in your code that derives
+from the AcGiGeometry class, you need to add a new pure virtual function
+implementation to the derived class.</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>z)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ARX2019<span
+style='background:#F7F8FA'> remove some interfaces, for example</span>:</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>AcGiVisualStyle::
+faceStyle();</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>AcGiVisualStyle::
+edgeStyle ();</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>AcGiVisualStyle::
+displayStyle ();</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>int acedFindFile (const ACHAR
+*fname, ACHAR *result);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>int acedGetEnv (const ACHAR
+*sym, ACHAR&nbsp; *var);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>int acedGetCfg (const ACHAR
+*sym, ACHAR&nbsp; *var);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif;background:#F7F8FA'>If any of
+the above interfaces are used in your code, please delete the code or use
+another interface instead</span><span style='font-size:12.0pt'>。</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>aa)<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></b><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ARX2019 changes the
+parameter of <span style='color:red'>readDwgFile () </span>function in AcDbDatabase
+class, for example:</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>Acad::ErrorStatus
+readDwgFile(const ACHAR* fileName,</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></i></b><b><i><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+color:red'>const int shmode&nbsp; = _SH_DENYWR</span></i></b><b><i><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>,</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+bool bAllowCPConversion = false,</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const
+wchar_t* wszPassword = nullptr);</span></i></b><span lang=EN-US
+style='font-size:9.5pt;font-family:新宋体;color:black'>&nbsp;&nbsp; </span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>-&gt;<b><i><span style='color:#0070C0'> Acad::ErrorStatus
+readDwgFile(const ACHAR* fileName,</span></i></b></span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></i></b><b><i><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;
+color:red'>const int shmode /*= _SH_DENYWR*/</span></i></b><b><i><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>,</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+bool bAllowCPConversion = false,</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const
+wchar_t* wszPassword = nullptr);</span></i></b><span lang=EN-US
+style='font-size:9.5pt;font-family:新宋体;color:black'>&nbsp;&nbsp; </span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>If you have use readDwgFile()</span><span
+style='font-size:12.0pt'>，</span><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>you need to check and change the code
+accordingly.</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>bb)<span
+style='font:7.0pt "Times New Roman"'> </span></span></b><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ARX2019 changes the
+definition of <span style='color:red'>Adesk::Boolean</span>.</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>ARX2008</span></i></b><b><i><span
+style='font-size:12.0pt;color:#0070C0'>：</span></i></b><b><i><span lang=EN-US
+style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>typedef
+int Boolean</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>ARX2019: typedef bool
+Boolean</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>Since both readItem() and writeItem
+implementations read and write only one bit. if you have use <span
+style='color:red'>readItem(int) </span>and <span style='color:red'>writeItem(int)
+</span>in the code, you can solve the problem by the following example:</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>readItem(</span></i></b><b><i><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:red'>int</span></i></b><b><i><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>writeItem(</span></i></b><b><i><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:red'>int</span></i></b><b><i><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>)</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>-&gt;<b><i><span style='color:#0070C0'>readItem(Adesk::Boolean);</span></i></b></span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:6.0pt;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>writeItem(Adesk::Boolean)</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif'>cc)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></b><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ARX2019
+changes the parameters of the interface <span style='color:red'>acedSSLength()</span></span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>ARX2008: int
+acedSSLength (const ads_name sname, long *len);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>ARX2019: int
+acedSSLength (const ads_name sname, <span style='background:yellow'>AdInt32 *</span>len);</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>If you have used acedSSLength ()</span><span
+style='font-size:12.0pt'>，</span><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>you need to check and change the code
+accordingly.</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif'>dd)<span style='font:7.0pt "Times New Roman"'>
+</span></span></b><span lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ARX2019
+changes the header file of <span style='color:red'>acdbGetPreviewBitmapFromDwg()</span>.
+</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>ARX2008: include&lt;dbxutil.h&gt;</span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>ARX2019: include<span
+style='background:yellow'>&lt;acdbimageutils.h&gt;</span></span></i></b></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Calibri",sans-serif'>If you have used this interface, you need to
+change the header file .</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt;line-height:18.0pt'><b><i><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ee)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></i></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif'>ARX2019 no
+longer defines macros <span style='color:red'>MAKE_ACDBOPENOBJECT_FUNCTION</span>,
+you need to use <span style='color:red'>acdbOpenObject </span>instead.</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>ARX2008:</span></i></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:red'>
+MAKE_ACDBOPENOBJECT_FUNCTION</span></p>
+
+<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
+text-indent:0cm;line-height:18.0pt'><b><i><span lang=EN-US style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;color:#0070C0'>ARX2019:</span></i></b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Calibri",sans-serif;color:red'>
+acdbOpenObject</span></p>
+
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2023 ZWSOFT CO., LTD.(Guangzhou). All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>zds_getfiled</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<script language="javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2022 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">zds_getfiled</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+<p class="cmd_line"><font color="#186DAD"><b>int zds_getfiled (const char *title, const char *path, const char *fileext, int options, struct zds_resbuf *filename);</b></font></p>
+<p class="body_text">Bring up the file dialog box.</p>
+<hr algin="left" />
+<p class="body_text">This function displays the standard Windows file dialog box so that the user can save, open, or find a file, as appropriate. However, this function includes arguments that allow you to somewhat customize the dialog box's wording.</p>
+<p class="body_text">The argument title represents the label of the dialog box. This is the text that appears across the top, such as "Open Drawing."</p>
+<p class="body_text">The path argument represents the default pathname and filename, if applicable. This is where the dialog box first looks for the file. This can be NULL. If so, the default is the current working directory.</p>
+<p class="body_text">The fileext argument is the default file extension. This can be overridden by the user only if bit 2 ( = 4) is set in options.</p>
+<p class="body_text">The argument options represents the sum of the appropriate bits for each of the following options:</p>
+<table class="table-desc">
+	<tr>
+		<th>Option</th>
+		<th>Meaning</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>Warns when the user types an existing filename; use this option to create a new file, not open an existing one.</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>Grays out the "Type it" button.</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>Allows the user to type a filename other than that specified by fileext.</td>
+	</tr>
+	<tr>
+		<td>8</td>
+		<td>Only the filename is stored in the result buffer, filename. When not set, the entire pathname is stored in filename. When option 1 is set (for creating a new file), this has no effect.</td>
+	</tr>
+	<tr>
+		<td>16</td>
+		<td>Path is assumed to be a pathname only. This is also true when path ends with a slash.</td>
+	</tr>
+</table>
+<p class="body_text">The argument filename is a result buffer containing either a string with the path and file name for the selected file or, if the user selected the Type It button, a short with a resval of 1.</p>
+<p class="body_text">This function returns RTNORM or RTERROR.</p>
+<p class="body_text"><b>Note</b>  While normally you would release the resbuf using zds_relrb, you do not want to when using this function because it will cause your program to crash.</p>
+<hr algin="left" />
+<p class="define_head_1">Example</p>
+<p class="define_text_1">struct zds_resbuf filename;</p>
+<p class="define_text_1"><b>zds_getfiled</b>("zds_getfiled Test Dialog",NULL,"DWG",4,&filename);</p>
+<p class="define_text_1">if (filename.restype==RTSTR)</p>
+<p class="define_text_1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zds_printf("\nThe name of the file is %s. ",filename.resval.rstring);</p>
+<p class="define_text_1">else if (filename.restype==RTINT)</p>
+<p class="define_text_1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zds_printf("\nThe user selected the \"Type it\" button. ");</p>
+<p class="define_text_1">else</p>
+<p class="define_text_1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zds_printf("\nAn error occurred.");</p>
+<hr algin="left" />
+<p class="define_head_1">Tell me about...</p>
+<ul class="command_ul">
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="Programming%20Overview%20of%20ZDS.htm">Programming Overview of ZDS (ZWCAD Development System)</a></p>
+	</li>
+</ul>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2022 广州中望龙腾软件股份有限公司 All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

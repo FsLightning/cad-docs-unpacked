@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>zds_start_list</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<script language="javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2022 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">zds_start_list</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+<p class="cmd_line"><font color="#186DAD"><b>int zds_start_list(zds_hdlg hDialog,char *szControlKey, int nChangeAddNew,int nWhichItem);</b></font></p>
+<p class="body_text">Starts processing the specified list box or pop-up list.</p>
+<hr algin="left" />
+<p class="body_text">Starts processing a list in the list box or pop-up list tile specified by szControlKey. Subsequent calls to 
+<a href="zds_add_list.htm">zds_add_list</a>() affect this list until the application calls 
+<a href="zds_end_list.htm">zds_end_list</a>(). The nChangeAddNew argument is one of the symbolic codes described in the following table.</p>
+<p class="body_text">List box codes for zds_start_list:</p>
+<table class="table-desc">
+	<tr>
+		<th>Value</th>
+		<th>ZDS symbol</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>LIST_CHANGE</td>
+		<td>Change selected list contents</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>LIST_APPEND</td>
+		<td>Append new list entry</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>LIST_NEW</td>
+		<td>Delete old list and create new list (in LISP, the default)</td>
+	</tr>
+</table>
+<p class="body_text">The nWhichItem argument is ignored unless the zds_start_list() call begins a change operation (LIST_CHANGE), in which case the nWhichItem indicates the list item to change by the subsequent 
+<a href="zds_add_list.htm">zds_add_list</a>() call. The nWhichItem is zero based.</p>
+<p class="body_text">The nWhichItem argument must be specified (the LIST_APPEND and LIST_NEW cases simply ignore its value). The hDialog argument specifies the dialog box.</p>
+<p class="body_text">The zds_start_list() function returns RTNORM if successful; otherwise, it returns an error code.</p>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2022 广州中望龙腾软件股份有限公司 All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

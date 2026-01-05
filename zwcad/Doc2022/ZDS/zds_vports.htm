@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>zds_vports</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<script language="javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2022 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">zds_vports</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+<p class="cmd_line"><font color="#186DAD"><b>int zds_vports (struct zds_resbuf **vlist);</b></font></p>
+<p class="body_text">Get information about this viewport.</p>
+<hr algin="left" />
+<p class="body_text">This function returns a description of all current viewports. The description returned by the zds_vports function is a list that includes the viewport identification number, followed by viewport coordinates. These coordinates vary, depending on the setting of Tilemode:</p>
+<ul class="command_ul">
+	<li>
+	<p class="body" style="margin-left: -15pt">When TileMode = 1, the list consists of the viewports created by the VPorts command. Coordinates of the viewport's corners, ranging from (0.0, 0.0) for the lower-left corner, to (1.0, 1.0) for the upper-right corner.</p>
+	</li>
+	<li>
+	<p class="body" style="margin-left: -15pt">When TileMode = 0, the list consists of the viewports created with the MView command. The corners are described by paper space coordinates.</p>
+	</li>
+</ul>
+<p class="body_text"><b>Note</b> In model space, the first viewport number is #2; viewport #1 is paper space when Tilemode = 0. The current viewport is listed first.</p>
+<hr algin="left" />
+<p class="define_head_1">Tell me about...</p>
+<ul class="command_ul">
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="Programming%20Overview%20of%20ZDS.htm">Programming Overview of ZDS (ZWCAD Development System)</a></p>
+	</li>
+</ul>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2022 广州中望龙腾软件股份有限公司 All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

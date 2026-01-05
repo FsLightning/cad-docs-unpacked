@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>zds_tblsearch</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<script language="javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2022 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">zds_tblsearch</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+<p class="cmd_line"><font color="#186DAD"><b>struct zds_resbuf *zds_tblsearch (const char *tblname, const char *symbol, int flag);</b></font></p>
+<p class="body_text">Search a table for a symbol.</p>
+<hr algin="left" />
+<p class="body_text">This function obtains information about a known symbol from a drawing tblname. After entering in the tblname argument and the known symbol name, a list is returned containing dotted pairs for the symbol.</p>
+<p class="body_text">The flag (when set non-nil, such as 1) lets the
+<a href="zds_tblnext.htm">zds_tblnext</a> function retrieve the next item in the table:</p>
+<p class="body_text">The list returned is exactly like that returned from
+<a href="zds_tblnext.htm">zds_tblnext</a>.</p>
+<p class="body_text">This function returns the data as a linked list of result buffers, using DXF group codes and values. Otherwise, it returns NULL.</p>
+<hr algin="left" />
+<p class="define_head_1">Tell me about...</p>
+<ul class="command_ul">
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="Programming%20Overview%20of%20ZDS.htm">Programming Overview of ZDS (ZWCAD Development System)</a></p>
+	</li>
+</ul>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2022 广州中望龙腾软件股份有限公司 All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

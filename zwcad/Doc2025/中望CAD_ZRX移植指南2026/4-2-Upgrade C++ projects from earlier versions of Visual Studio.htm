@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>从Visual Studio低版本到Visual Sutidio高版本</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+
+
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">中望CAD 2026 ZRX移植指南</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">从Visual Studio低版本到Visual Sutidio高版本</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+
+<p class="dev_body_text">实际上，进行移植的源工程往往基于Visual Studio的各个版本(下表列举了其他CAD平台的开发环境要求)，可能低于中望CAD需要的Visual Studio 2017(见<a href="1-2-Environment%20and%20compatibility.htm">环境要求</a>)，所以在移植时往往需要先升级源工程(<a href="2-1-Upgrade%20the%20ARX%20projects%20to%20the%20Visual%20Studio%202017.htm">步骤1</a>)，本文将补充说明升级Visual Studio过程中的常见问题。</p>
+
+<div class="define_text_1">
+<table class="simple_table_desc">
+<tr>
+<th>AutoCAD版本</th>
+<th>推荐Microsoft Visual Studio版本</th>
+<th>平台工具集</th>
+<th>.NET Framework版本</th>
+</tr>
+<tr>
+<td>AutoCAD 2024</td>
+<td>Microsoft Visual Studio 2022 version 17.2.6</td>
+<td>v143</td>
+<td>v4.8</td>
+</tr>
+<tr>
+<td>AutoCAD 2023</td>
+<td>Microsoft Visual Studio 2019 version 16.11.5</td>
+<td>v142</td>
+<td>v4.8</td>
+</tr>
+<tr>
+<td>AutoCAD 2022</td>
+<td>Microsoft Visual Studio 2019 version 16.7</td>
+<td>v142</td>
+<td>v4.8</td>
+</tr>
+<tr>
+<td>AutoCAD 2021</td>
+<td>Microsoft Visual Studio 2019 (v16.0) </td>
+<td>v142</td>
+<td>v4.8</td>
+</tr>
+<tr>
+<td>AutoCAD 2019/2020</td>
+<td>Microsoft Visual Studio 2017 with Update 2</td>
+<td>v141</td>
+<td>v4.7</td>
+</tr>
+<tr>
+<td>AutoCAD 2018</td>
+<td>Microsoft Visual Studio 2015 with Update 3</td>
+<td>v140</td>
+<td>v4.6</td>
+</tr>
+<tr>
+<td>AutoCAD 2017</td>
+<td>Microsoft Visual Studio 2015 with Update 1</td>
+<td>v140</td>
+<td>v4.6</td>
+</tr>
+<tr>
+<td>AutoCAD 2015/2016</td>
+<td>Microsoft Visual Studio 2012 with Update 4</td>
+<td>v110</td>
+<td>v4.5</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</table>
+</div>
+
+<hr algin="left" >
+<p class="define_head_1">常见问题</p>
+<p class="define_head_2">重定向项目</p>
+<p class="define_text_2">Microsoft Visual Studio打开旧版本产生的源工程时会提示用户重定向项目，如项目由Visual Studio 6.0及更早版本(如Visual C++ 6.0)产生(<a href="https://learn.microsoft.com/en-us/windows/win32/stg/using-visual-studio" target="_blank">工作区文件为*.dsw，项目文件为*.dsp</a>)，Microsoft Visual Studio打开项目时会提示用户对项目<a href="https://learn.microsoft.com/en-us/cpp/porting/upgrading-projects-from-earlier-versions-of-visual-cpp?view=msvc-150" target="_blank">进行单向升级并生成升级报告</a>。请根据Microsoft Visual Studio的引导升级源工程。</p>
+<p class="define_head_2">字符集修改</p>
+<p class="define_text_2">Microsoft Visual Studio早期版本中的C++工程多是使用ANSI编码来进行开发，如果项目导出了大量ANSI字符串相关的函数给其他ARX/ZRX工程使用，建议参考<a href="4-1-From%20the%20MBCS%20to%20the%20Unicode.htm">从MBCS字符集到Unicode字符集</a>中的描述将项目升级为Unicode字符集。</p>
+<p class="define_head_2">接口修改</p>
+<ul class="command_ul">
+<li class="define_text_1">修改已经弃用的接口。如GetVersion、GetVersionEx、_ftcscat等已经标记为"deprecated"的接口需要适配修改，不支持的接口请搜索Visual C++包含目录中的deprecated字段，替代接口请查询<a href="https://learn.microsoft.com/en-us/?redirectedfrom=MSDN" target="_blank">MSDN</a>。</li>
+<li class="define_text_1">CRT中的安全功能。许多旧CRT函数具有更新、更安全的版本(_s后缀)，如果由于这些接口导致编译失败请使用安全版本或者使用_CRT_SECURE_NO_WARNINGS宏消除弃用警告，详细见<a href="https://learn.microsoft.com/en-us/cpp/c-runtime-library/security-features-in-the-crt?view=msvc-150" target="_blank">Security Features in the CRT</a>。</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2025 ZWSOFT CO., LTD.(Guangzhou). All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

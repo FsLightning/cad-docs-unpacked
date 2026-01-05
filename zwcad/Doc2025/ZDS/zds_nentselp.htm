@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>zds_nentselp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<script language="javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2024 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">zds_nentselp</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+<p class="cmd_line"><font color="#186DAD"><b>int zds_nentselp (const char *prompt, zds_name entity-name, zds_point point, int userpick, zds_matrix ecs2wcs, struct zds_resbuf **nestblks);</b></font></p>
+<p class="body_text">Get information about this nested object.</p>
+<hr algin="left" />
+<p class="body_text">This function works very much like <a href="zds_entsel.htm">zds_entsel</a> but has features especially suited to dealing with objects nested within other objects, such as polyline vertices and block components.</p>
+<p class="body_text">Just as in zds_entsel, entity-name is the object selected, and point is the point used to select it. Also, here you have the option of prompting the user with prompt or using a predefined point with userpick, and a way to specify the prompt's wording.</p>
+<p class="body_text">There are two additional outputs with information specific to nested objects:</p>
+<ul class="command_ul">
+	<li>
+	<p class="body" style="margin-left: -15pt">A transformation matrix for converting from the entity's Coordinate System to the World Coordinate System;</p>
+	</li>
+	<li>
+	<p class="body" style="margin-left: -15pt">A linked list of objects in which the selected object is nested.</p>
+	</li>
+</ul>
+<p class="body_text">The prompt argument is the string that prompts the user for input. This argument may be null. If userpick is 1, this is not needed and is ignored.</p>
+<p class="body_text">If userpick is 0, and this prompt is NULL, ZWCAD&reg; displays the default pick prompt.</p>
+<p class="body_text">The argument entity-name is the name of the object selected.</p>
+<p class="body_text">The argument point variable serves two purposes:</p>
+<table class="table-desc">
+	<tr>
+		<th>Userpick</th>
+		<th>Meaning</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>point is used as the selection point.</td>
+	</tr>
+	<tr>
+		<td>0</td>
+		<td>zds_nentselp sets point to the point used to select the object.</td>
+	</tr>
+</table>
+<p class="body_text">The userpick argument is a toggle indicating whether to prompt the user to pick an object, or to accept the current value of entpoint as the pickpoint. If userpick is set to 0, the user is asked to pick an object. If userpick is 1, point is taken as the selection point.</p>
+<p class="body_text">The argument ecs2wcs is a transformation matrix for converting point from the Entity Coordinate System to the World Coordinate System in the case that the object is nested inside a block or blocks. If not, this is an identity matrix. In zds_nentselp this is a 4x4 transformation matrix, whereas in 
+<a href="zds_nentsel.htm">zds_nentsel</a> it is a 4x3 matrix.</p>
+<p class="body_text"><b>Note </b>The 4x4 matrix of zds_nentselp is preferred. The other function, 
+<a href="zds_nentsel.htm">zds_nentsel</a>, is available because some programs written for other CAD systems rely on it; however, you should not use it in a new program.</p>
+<p class="body_text">The nestblks argument is a linked list of nested blocks, in which the chosen object is contained. The first block in the list is the one that directly contains the object; the next contains the first, and so on.</p>
+<p class="body_text">This function returns RTNORM, RTCAN, RTERROR, or RTKWORD.</p>
+<hr algin="left" />
+<p class="define_head_1">Example</p>
+<p class="define_text_1">char *prompt;</p>
+<p class="define_text_1">zds_name entname;</p>
+<p class="define_text_1">zds_point entpoint;</p>
+<p class="define_text_1">int userpick;</p>
+<p class="define_text_1">zds_matrix ecs2wcs;</p>
+<p class="define_text_1">struct zds_resbuf *nestblks;</p>
+<p class="define_text_1"><b>zds_nentselp</b>("Pick your favorite object: ",entname, entpoint, userpick, 
+ecs2wcs, nestblks);</p>
+<hr algin="left" />
+<p class="define_head_1">Tell me about...</p>
+<ul class="command_ul">
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="Programming%20Overview%20of%20ZDS.htm">Programming Overview of ZDS (ZWCAD Development System)</a></p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_entsel.htm">zds_entsel</a></p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_nentsel.htm">zds_nentsel</a></p>
+	</li>
+</ul>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2023 ZWSOFT CO., LTD.(Guangzhou). All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

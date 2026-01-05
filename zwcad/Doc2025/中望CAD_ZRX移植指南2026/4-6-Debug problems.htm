@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>调试方式及调试过程启动慢问题</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+
+
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">中望CAD 2026 ZRX移植指南</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">调试方式及调试过程启动慢问题</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+
+<p class="dev_body_text">Microsoft Visual Studio为开发者提供了强大的调试功能，基于中望CAD的二次开发程序可以使用这些功能来进行调试，Visual Studio的调试功能的详细介绍参见<A href="https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2017/debugger/?view=vs-2017" target="_blank"><span lang=EN-US style="FONT-SIZE: 12pt">Visual Studio调试器文档</span></A>。</p>
+
+<hr algin="left" >
+<p class="define_head_1"><A href="https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2017/debugger/debugger-feature-tour?view=vs-2017" target="_blank">启动调试(F5)</A></p>
+<ol class="command_ol">
+	<li class="dev_body_text" value="1">首先，切换到Debug配置或者将【C/C++】-【优化】页面中的优化设置禁用。
+        <p><img class="pics" src="../pics/c-c++_optimization.png"></p>
+    </li>
+    <li class="dev_body_text" value="2">然后，将【调试】页面的命令设置为ZWCAD.exe的全路径。
+        <p><img class="pics" src="../pics/debugging_command.png"></p>
+    </li>
+    <li class="dev_body_text" value="3">最后，使用快捷键F5或者点击调试按钮(<img src="../pics/debugging_button.png">)启动中望CAD并加载ZRX程序进行调试。
+    </li>
+</ol> 
+
+<hr algin="left" >
+<p class="define_head_1"><A href="https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2017/debugger/attach-to-running-processes-with-the-visual-studio-debugger?view=vs-2017" target="_blank">附加调试(Ctrl+Alt+p)</A></p>
+<ol class="command_ol">
+	<li class="dev_body_text" value="1">首先，也需要切换到Debug配置或者将【C/C++】-【优化】页面中的优化设置禁用。</li>
+    <li class="dev_body_text" value="2">然后，直接启动中望CAD。</li>
+    <li class="dev_body_text" value="3">最后，使用快捷键Ctrl+Alt+p或者通过菜单【调试(D)】-【附加到进程(P)】将调试器附加到对应的中望CAD进程(ZWCAD.exe)进行调试。
+    </li>
+</ol> 
+
+<div class="define_text_0">
+    <table class="note-table">
+        <tr>
+        <td class="note-table-img"><IMG class=note-img src="../images/note.gif"></td>
+        <td class="note-table-title"><span class="note-title">注意</span></td>
+        <td class="note-table-text"><span class="note-text">中望CAD启动或者新建文档初始化lisp环境过程会抛出ZwLispException类型的异常，这些异常信息会被调试器捕捉到，可能会导致调试状态下启动软件或者新建文档的速度变慢，可以使用附加调试方式来规避这类调试慢的问题。如果ZRX程序不会依赖lisp模块，也可以暂时将安装目录的ZwLisp.zrx改名。</span></td>
+        </tr>
+    </table>
+</div>
+
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2025 ZWSOFT CO., LTD.(Guangzhou). All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

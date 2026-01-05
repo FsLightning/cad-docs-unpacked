@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>zds_exit</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<script language="javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2024 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">zds_exit</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+<p class="cmd_line"><font color="#186DAD"><b>void zds_exit (int status);</b></font></p>
+<p class="body_text">Notify ZWCAD that the ZDS application is exiting now, then exit.</p>
+<hr algin="left" />
+<p class="body_text">This function tells ZWCAD that the ZDS application is about to exit and then exits. If the application exits without telling ZWCAD, the memory and resources it uses are not freed.</p>
+<p class="body_text">The status argument represents the way in which the application terminated. Use 0 (zero) for a planned and intentional termination. Other values can be used for unusual reasons for exiting the application, depending on your system.</p>
+<p class="body_text">This function returns void.</p>
+<hr algin="left" />
+<p class="define_head_1">Example</p>
+<p class="define_text_1">zds_printf("\nOURBASE is shutting down now.");</p>
+<p class="define_text_1"><b>zds_exit</b>(0);</p>
+<hr algin="left" />
+<p class="define_head_1">Tell me about...</p>
+<ul class="command_ul">
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="Programming%20Overview%20of%20ZDS.htm">Programming Overview of ZDS (ZWCAD Development System)</a></p>
+	</li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_abort.htm">zcrx_abort</a></p></li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_alert.htm">zds_alert</a></p></li>
+	<li>
+	<p class="define_text" style="margin-left: 0pt"><a href="zds_fail.htm">zds_fail</a></p></li>
+</ul>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2023 ZWSOFT CO., LTD.(Guangzhou). All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>

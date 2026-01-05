@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>zds_new_dialog</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" href="../styles/style.css" rel="stylesheet" />
+<link type="text/css" href="../styles/zwcadcss.css" rel="StyleSheet" />
+<script language="javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div id="main" class="main">
+<div id="header" class="header">
+<div class="header_resize">
+<div class="banner">
+	<div class="banner_img_right"><img src="../images/banner_img_right.png"></div>
+	<div class="hear_text">ZWCAD 2022 Help</div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+    <div class="Tophead"><span class="Tophead_text">zds_new_dialog</span></div> 
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+<p class="cmd_line"><font color="#186DAD"><b>int zds_new_dialog(char *szDialogName,int nDialogFileID,void *pfnDef_Callback,zds_hdlg *hDialog);</b></font></p>
+<p class="body_text">Begins handling a new dialog box, displays it, and optionally specifies a default action. </p>
+<hr algin="left" />
+<p class="body_text">The szDialogName argument is a string that specifies the dialog box, and nDialogFileID identifies the DCL file (you must have obtained its value from the 
+<a href="zds_load_dialog.htm">zds_load_dialog</a>() call).</p>
+<p class="body_text">Your application must call zds_new_dialog() before it calls 
+<a href="zds_start_dialog.htm">zds_start_dialog</a>(). All dialog box initialization, such as setting tile values, creating images or lists for list boxes, and associating actions with specific tiles (with 
+<a href="zds_action_tile.htm">zds_action_tile</a>()) must take place after the zds_new_dialog() call and before the 
+<a href="zds_start_dialog.htm">zds_start_dialog</a>() call.</p>
+<p class="body_text">The default action is evaluated when the user selects an active tile that doesn't have an action or callback explicitly assigned to it by
+<a href="zds_action_tile.htm">zds_action_tile</a>() or in DCL.</p>
+<p class="body_text">The pfnDef_Callback argument specifies the optional default callback function. If you don't use this option, pfnDef_Callback must be NULLCB. If zds_new_dialog() succeeds, it returns RTNORM and sets hDialog to a valid dialog box handle; otherwise, it returns RTERROR and sets hDialog to NULL. Many subsequent calls to programmable dialog box (PDB) functions require you to specify the hDialog value that the call to zds_new_dialog() returns.</p>
+<p class="body_text"><b>Note</b> Always check the status that zds_new_dialog() returns. Calling 
+<a href="zds_start_dialog.htm">zds_start_dialog</a>() when the zds_new_dialog() call has failed can have unpredictable results.</p>
+<p class="body_text">The function returns RTNORM if successful; otherwise, it returns an error code.</p>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="blank"></div>
+<div class="footer_placeholder"></div>
+</div>
+<div id="fbg" class="fbg">
+<div class="footer">
+<span class="lr">&copy; 1998-2022 广州中望龙腾软件股份有限公司 All Rights Reserved.</span>
+<div class="clr"></div>
+</div>
+</div> 
+</body>
+</html>
